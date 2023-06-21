@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>main</title>
+  <link rel="stylesheet" href="/css/styleGuide.css?v20210903">
+
+</head>
+<body>
+  <div class="styleGuide">
+    <nav class="sg-leftMenu">
+      <h2 hidden>사이드 메뉴</h2>
+      <ul class="sg-nav">
+        <li class="sg-navGroup">
+          <a href="/html/guide/web_style_guide.html" class="sg-navLink -active"><i class="fa-regular fa-file-lines"></i> WEB</a>
+          <a href="" class="sg-navLink"><i class="fa-solid fa-mobile-screen-button"></i> MOBILE</a>
+          <a href="" class="sg-navLink"><i class="fa-brands fa-app-store-ios"></i> APP</a>
+        </li>
+
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">SETTING</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="/html/guide/setting.html" class="sg-navLink "><i class="fa-solid fa-gear"></i> 퍼블리싱 설정</a>
+              <a href="/html/guide/css.html" class="sg-navLink -active"><i class="fa-solid fa-gear"></i> CSS 가이드</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">FORM</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-regular fa-square"></i> Input</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-square-check"></i> Button</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table"></i> Table</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-palette"></i> Color</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-text-width"></i> Text</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-indent"></i> Form</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">ICON</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-icons"></i> Sprite</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">PAGE</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table-columns"></i> 모달 팝업</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">UTIL</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table-columns"></i> 유틸리티1</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <section class="sg-contents">
+      <div class="sg-main">
+        <h1 class="mgB5 sg-h1"><i class="fa-solid fa-gear"></i> CSS 가이드</h1>
+        <p class="mgB30">CSS 방법론</p>
+        <article>
+          <h2 class="mgB10 sg-h2"><i class="fa-solid fa-code"></i> BEM</h2>
+          <ul class="sg-list mgB20">
+            <li>기본 명명 규칙은 BEM 방법론을 기초로 함</li>
+            <li>단어 표기방식은 카멜 표시법으로 표기함</li>
+            <li>블럭이나 엘리먼트 속성의 표기법은 이름을 상속하지않고 - 하나만으로 표현한다.</li>
+          </ul>
+          <div class="colorscripter-code mgB20" style="color:#f0f0f0;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important;overflow:auto"><table class="colorscripter-code-table" style="margin:0;padding:0;border:none;background-color:#272727;border-radius:4px;" cellspacing="0" cellpadding="0"><tr><td style="padding:6px;border-right:2px solid #4f4f4f"><div style="margin:0;padding:0;word-break:normal;text-align:right;color:#aaa;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div><div style="line-height:130%">9</div></div></td><td style="padding:6px 0;text-align:left"><div style="margin:0;padding:0;color:#f0f0f0;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"header"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"header__inner"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"tabzilla"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"header__logo"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"header__auth"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"nav"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#ff3399">div</span>&nbsp;<span style="color:#a8ff58">class</span>=<span style="color:#ffd500">"header__search"</span><span style="color:#a8ff58"></span><span style="color:#f0f0f0">&gt;</span><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;<span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#f0f0f0">&lt;</span><span style="color:#f0f0f0">/</span><span style="color:#ff3399">div</span><span style="color:#f0f0f0">&gt;</span></div></div><div style="text-align:right;margin-top:-13px;margin-right:5px;font-size:9px;font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color:#4f4f4ftext-decoration:none">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom;padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="text-decoration:none;color:white"><span style="font-size:9px;word-break:normal;background-color:#4f4f4f;color:white;border-radius:10px;padding:1px">cs</span></a></td></tr></table></div>
+
+          <h2 class="mgB10 sg-h2"><i class="fa-solid fa-code"></i> CUSTOM BEM</h2>
+          <ul class="mgB20 sg-list">
+            <li>속성값을 블럭요소의 이름을 사용하지않고 단독으로 사용한다.</li>
+            <li>-- 을 사용하지않고 - 의 값으로 표기한다.</li>
+          </ul>
+          <h2 class="sg-h2 mgB10">그외</h2>
+          <li>error 나는 대부분의 이유는 node 버전때문이며 node.js 기존버전을 병합하여 사용해야할경우 nvm 을 별도로 설치하여 node.js 버전변경 하여 사용</li>
+        </article>
+      </div>
+    </section>
+  </div>
+
+</body>
+<script>
+
+</script>
+</html>

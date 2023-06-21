@@ -1,0 +1,43 @@
+	@mixin icon02($onlyPos:all) {
+		@if $onlyPos == pos {
+			background-position: 0px 0px;
+		} @else {
+			display:inline-block;
+			width: 225px;
+			height: 225px;
+			background-position: 0px 0px;
+			background-size: 455px 251px;
+			background-image: url($spriteURL+'sprite.png'+$spriteCache);
+			background-repeat: no-repeat;	
+		}
+	}
+	@mixin icon03($onlyPos:all) {
+		@if $onlyPos == pos {
+			background-position: -230px 0px;
+		} @else {
+			display:inline-block;
+			width: 225px;
+			height: 225px;
+			background-position: -230px 0px;
+			background-size: 455px 251px;
+			background-image: url($spriteURL+'sprite.png'+$spriteCache);
+			background-repeat: no-repeat;	
+		}
+	}
+	@mixin iconA($onlyPos:all) {
+		@if $onlyPos == pos {
+			background-position: 0px -230px;
+		} @else {
+			display:inline-block;
+			width: 21px;
+			height: 21px;
+			background-position: 0px -230px;
+			background-size: 455px 251px;
+			background-image: url($spriteURL+'sprite.png'+$spriteCache);
+			background-repeat: no-repeat;	
+		}
+	}
+
+    .icon02 {@include icon02();}
+    .icon03 {@include icon03();}
+    .iconA {@include iconA();}

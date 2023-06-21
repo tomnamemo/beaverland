@@ -1,0 +1,62 @@
+@charset "UTF-8";
+$urlNoto:"/font/notoSans/";
+$urlRoboto:"/font/Roboto/";
+
+
+@font-face {
+  font-family: "NotoSans";
+  src: url($urlNoto + 'NotoSansKR-Light.woff2') format('woff2'),
+  url($urlNoto + 'NotoSansKR-Light.woff') format('woff'),
+  url($urlNoto + 'NotoSansKR-Light.oft') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url($urlNoto + 'NotoSansKR-Regular.woff2') format('woff2'),
+  url($urlNoto + 'NotoSansKR-Regular.woff') format('woff'),
+  url($urlNoto + 'NotoSansKR-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NotoSans";
+  src: url($urlNoto + 'NotoSansKR-Medium.woff2') format('woff2'),
+  url($urlNoto + 'NotoSansKR-Medium.woff') format('woff'),
+  url($urlNoto + 'NotoSansKR-Medium.oft') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url($urlNoto + 'NotoSansKR-Bold.woff2') format('woff2'),
+  url($urlNoto + 'NotoSansKR-Bold.woff') format('woff'),
+  url($urlNoto + 'NotoSansKR-Bold.oft') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 100;
+  src: url($urlRoboto + 'Roboto-Light.woff') format('woff');
+  unicode-range:U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: normal;
+  src: url($urlRoboto + 'Roboto-Regular.woff') format('woff');
+  unicode-range:U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+  font-family: 'NotoSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url($urlRoboto + 'Roboto-Medium.woff') format('woff');
+  unicode-range:U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}

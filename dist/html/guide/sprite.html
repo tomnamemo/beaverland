@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="ko"><head>
+</head>
+<body>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>스프라이트 이미지</title>
+<link rel="stylesheet" href="/css/styleGuide.css?v20210903">
+
+
+
+<div class="styleGuide">
+    <nav class="sg-leftMenu">
+      <h2 hidden>사이드 메뉴</h2>
+      <ul class="sg-nav">
+        <li class="sg-navGroup">
+          <a href="/html/guide/web_style_guide.html" class="sg-navLink -active"><i class="fa-regular fa-file-lines"></i> WEB</a>
+          <a href="" class="sg-navLink"><i class="fa-solid fa-mobile-screen-button"></i> MOBILE</a>
+          <a href="" class="sg-navLink"><i class="fa-brands fa-app-store-ios"></i> APP</a>
+        </li>
+
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">SETTING</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="/html/guide/setting.html" class="sg-navLink -active"><i class="fa-solid fa-gear"></i> 퍼블리싱 설정</a>
+              <a href="/html/guide/css.html" class="sg-navLink "><i class="fa-solid fa-gear"></i> CSS 가이드</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">FORM</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-regular fa-square"></i> Input</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-square-check"></i> Button</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table"></i> Table</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-palette"></i> Color</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-text-width"></i> Text</a>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-indent"></i> Form</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">ICON</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-icons"></i> Sprite</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">PAGE</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table-columns"></i> 모달 팝업</a>
+            </li>
+          </ul>
+        </li>
+        <li class="sg-navGroup">
+          <p class="sg-navTitle">UTIL</p>
+          <ul class="sg-nav">
+            <li>
+              <a href="" class="sg-navLink"><i class="fa-solid fa-table-columns"></i> 유틸리티1</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <section class="sg-contents">
+        <div class="sg-main">
+            <h1 class="mgB5 sg-h1"><i class="fa-solid fa-gear"></i> 스프라이트 이미지</h1>
+            <p class="mgB5">아이콘 모음 클릭하면 클립보드에 클래스명이 복사.</p>
+            <p class="mgB30">아이콘은 mixin 형태로 생성되며 class로 사용시에는 background-image, inline-block 속성을 가지고있다.</p>
+            <article>
+                <h2 class="mgB10 sg-h2"><i class="fa-solid fa-folder"></i> 아이콘명</h2>
+                <div id="spriteContainer">
+<div class="spriteContainer__item">
+            <figure class="spriteContainer__img">
+              <img src="/images/sprite/iconA.png" alt="iconA">
+              <figcaption>iconA</figcaption>
+            </figure>
+          </div>
+</div>
+            </article>
+            
+            <div class="icon03"></div>
+        </div>
+
+        
+    </section>
+</div>
+
+
+<script>
+    //클립보드 복사
+    const copyToClipboard = async (text) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("클립보드 복사 완료")
+        } catch (err) {
+            console.error("클립보드에 복사 실패: ", err);
+        }
+    };
+    const clickTar = document.querySelectorAll('.spriteContainer__item');
+    clickTar.forEach((btn) => {
+        btn.addEventListener('click',()=>{
+            const copyTxt =  btn.querySelector("figcaption");
+            copyToClipboard(copyTxt.textContent);
+        })
+    })
+</script>
+
+</body></html>

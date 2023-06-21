@@ -1,0 +1,6 @@
+@mixin {{className}}($width,$height,$ratio:1) {
+    width:($width/$ratio) + px;
+    height:($height/$ratio) + px;
+    background:url("{{dataURISchema}}") no-repeat 0 0;
+    background-size: contain;  
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <include src="../include/guide/dtd_styleGuide.html" title="main"></include>
+</head>
+<body>
+  <div class="styleGuide">
+    <include src="../include/guide/sg-leftMenu.html" setting="-active"></include>
+    <section class="sg-contents">
+      <div class="sg-main">
+        <h1 class="mgB5 sg-h1"><i class="fa-solid fa-gear"></i> 환경세팅</h1>
+        <p class="mgB30">퍼블리싱 기본 환경 세팅 가이드 입니다.</p>
+        <article>
+          <h2 class="mgB10 sg-h2"><i class="fa-solid fa-code"></i> NPM</h2>
+          <ul class="sg-list mgB20">
+            <li>node 버전은 14.17.6 기준으로 설정 (14.xx 버전으로 설치)</li>
+            <li>package.json 기준으로 설치</li>
+            <li>gulp 는 4.X 기준으로 작성되었습니다.</li>
+          </ul>
+          <h2 class="mgB10 sg-h2"><i class="fa-solid fa-code"></i> GULP TASK</h2>
+          <ul class="mgB20 sg-list">
+            <li><i class="colorRed">watch_web</i> - 로컬 서버 시작 및 관련 리소스 watch</li>
+            <li><i class="colorRed">build</i> - src 관련 리소스를 구축하여 dist에 전달</li>
+            <li><i class="colorRed">min_js</i> - src/js 폴더의 js 확장자를 min 파일로 압축 dist에 전달</li>
+            <li><i class="colorRed">bs</i> - 브라우저싱크 로컬서버 시작</li>
+            <li><i class="colorRed">spriteIcon</i> - src/images/sprite/ 폴더내의 이미지를 dist/images/sprite.png 파일로 취합해줌 (폴더생성시 폴더명으로 sprite.png 파일을 분리해줌)</li>
+            <li><i class="colorRed">datauri</i> - src/images/datauri/ 폴더내의 이미지를 이미지파일명으로 class로 mixin 으로 dataIMG로 변환</li>
+            <li><i class="colorRed">sass</i> - src/sass/ 폴더내의 scss 파일을 취합 css로 변환</li>
+            <li><i class="colorRed">imageMin</i> - src/images/ 폴더안의 이미지파일을 간소화시켜 dist/images 에 배포 (gif,jpg,png,svg) sprite.png 는 예외</li>
+            <li><i class="colorRed">imgUpdate</i> - src/images/ 폴더안의 이미지파일은 단순 복사하여 dist/images/ 로 이동</li>
+            <li><i class="colorRed">html</i> - src/html/ 폴더안의 html 파일을 취합하여 dist/html에 전달 /*/include 파일은 제외</li>
+            <li><i class="colorRed">htmlPUG</i> - src/html/pug/ 폴더안의 *.pug 파일을 html로 변환하여 dist/html에 변환</li>
+          </ul>
+          <h2 class="sg-h2 mgB10">그외</h2>
+          <ul class="sg-list">
+            <li>error 나는 대부분의 이유는 node 버전때문이며 node.js 기존버전을 병합하여 사용해야할경우 nvm 을 별도로 설치하여 node.js 버전변경 하여 사용</li>
+            <li>특정 패키지에서 지속되는 에러가 발생시 설치후 정상적인 사용자의 node_modules 폴더를 덮어씌워 사용</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </div>
+
+</body>
+<script>
+
+</script>
+</html>
