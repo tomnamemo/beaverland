@@ -16,15 +16,15 @@
     <!-- header start -->
     <header class="header">
       <nav class="header__nav">
-        <h1 class="logo">beaverland</h1>
-        <ul class="menu">
+        <h1 class="header__logo"><a href="#">beaverland</a></h1>
+        <ul class="header__list">
           <!-- 인트로, 이력, 교육, 스킬, 자격증, 스터디 연락처 -->
-          <li class="menu__item"><a href="#experience">experience</a></li>
-          <li class="menu__item"><a href="#education">education</a></li>
-          <li class="menu__item"><a href="#skills">skills</a></li>
-          <li class="menu__item"><a href="#licensce">licensce</a></li>
-          <li class="menu__item"><a href="#sideproject">side project</a></li>
-          <li class="menu__item"><a href="#contact">Contact</a></li>
+          <li class="header__item"><a href="#experience">experience</a></li>
+          <li class="header__item"><a href="#education">education</a></li>
+          <li class="header__item"><a href="#skills">skills</a></li>
+          <li class="header__item"><a href="#licensce">licensce</a></li>
+          <li class="header__item"><a href="#sideproject">side project</a></li>
+          <li class="header__item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -35,47 +35,47 @@
       <!-- section intro -->
       <section class="main__section intro">
         <div class="intro__content group01">
-          <p class="content__text">Beaverland</p>
-          <div class="content__imgbox">aa</div>
-          <p class="content__text">web-publisher</p>
+          <p class="intro__title a">Beaverland</p>
+          <div class="intro__imgbox">aa</div>
+          <p class="intro__title b">web-publisher</p>
         </div>
         <div class="intro__content group02">
-          <p>I'M A CREATIVE DESIGNER AND WEB DEVELOPER WHO HAS</p>
-          <p>A PASSION FOR BOTH DIGITAL AND ANALOG MEDIUMS.</p>
+          <p class="intro__subtitle a">I'M A CREATIVE WEB PUBLISHER WHO HAS</p>
+          <p class="intro__subtitle b">A PASSION AND SNICAL KINDNESS.</p>
         </div>
       </section>
 
-      <!-- section 01 -->
+      <!-- section 01 experience-->
       <section class="main__section group01" id="experience">
         <p class="section__title">experience</p>
         <p>이력 나열홍</p>
       </section>
 
-      <!-- section 02 -->
+      <!-- section 02 education-->
       <section class="main__section group02" id="education">
         <p class="section__title">education</p>
         <p>학력 나열</p>
       </section>
 
-      <!-- section 03 -->
+      <!-- section 03 skills-->
       <section class="main__section group03" id="skills">
         <p class="section__title">skills</p>
         <p>스킬 플로우</p>
       </section>
 
-      <!-- section 04 -->
+      <!-- section 04 licensce-->
       <section class="main__section group04" id="licensce">
         <p class="section__title">licensce</p>
         <p>라이센스 나열</p>
       </section>
 
-      <!-- section 05 -->
+      <!-- section 05 sideproject-->
       <section class="main__section group05" id="sideproject">
         <p class="section__title">sideproject</p>
         <p>사이드프로젝트</p>
       </section>
 
-      <!-- section 06 -->
+      <!-- section 06 contact-->
       <section class="main__section group05" id="contact">
         <p class="section__title">contact</p>
         <p>연락을 원하시면 이메일로 연락 바랍니다.</p>
@@ -110,6 +110,55 @@
       }
       // 현재 스크롤 위치 업데이트
       lastScrollPosition = currentScrollPosition;
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      // 초기 상태 설정
+      $(".intro__content.group01 > .content__text:first-child").css({
+        transform: "translateY(-50px)",
+        opacity: "0",
+      });
+      $(".intro__content.group02").css({
+        transform: "translateY(50px)",
+        opacity: "0",
+      });
+      $(".content__imgbox").css({
+        height: "0",
+        opacity: "0",
+        transition: "all 0.5s ease-out",
+      });
+
+      // 스크롤 이벤트
+      $(window).scroll(function () {
+        // 텍스트 애니메이션
+        if (
+          $(window).scrollTop() >
+          $(".intro").offset().top - $(window).height() / 2
+        ) {
+          $(".intro__content.group01 > .content__text:first-child").css({
+            transform: "translateY(0)",
+            opacity: "1",
+            transition: "all 0.5s ease-out",
+          });
+          $(".intro__content.group02").css({
+            transform: "translateY(0)",
+            opacity: "1",
+            transition: "all 0.5s ease-out",
+          });
+        }
+
+        // 이미지 박스 애니메이션
+        if (
+          $(window).scrollTop() >
+          $(".intro__content.group02").offset().top - $(window).height() / 2
+        ) {
+          $(".content__imgbox").css({
+            height: "지정된 높이값", // 여기에 원하는 높이값을 넣어주세요
+            opacity: "1",
+          });
+        }
+      });
     });
   </script>
 </html>
