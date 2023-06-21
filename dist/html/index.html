@@ -9,7 +9,107 @@
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <link rel="stylesheet" href="/css/style.css" />
-    <title>Document</title>
+    <link rel="icon" href="/images/favicon.ico" />
+    <title>비버랜드</title>
   </head>
-  <body></body>
+  <body>
+    <!-- header start -->
+    <header class="header">
+      <nav class="header__nav">
+        <h1 class="logo">beaverland</h1>
+        <ul class="menu">
+          <!-- 인트로, 이력, 교육, 스킬, 자격증, 스터디 연락처 -->
+          <li class="menu__item"><a href="#experience">experience</a></li>
+          <li class="menu__item"><a href="#education">education</a></li>
+          <li class="menu__item"><a href="#skills">skills</a></li>
+          <li class="menu__item"><a href="#licensce">licensce</a></li>
+          <li class="menu__item"><a href="#sideproject">side project</a></li>
+          <li class="menu__item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- header end -->
+
+    <!-- main start -->
+    <main class="main">
+      <!-- section intro -->
+      <section class="main__section intro">
+        <div class="intro__content group01">
+          <p class="content__text">Beaverland</p>
+          <div class="content__imgbox">aa</div>
+          <p class="content__text">web-publisher</p>
+        </div>
+        <div class="intro__content group02">
+          <p>I'M A CREATIVE DESIGNER AND WEB DEVELOPER WHO HAS</p>
+          <p>A PASSION FOR BOTH DIGITAL AND ANALOG MEDIUMS.</p>
+        </div>
+      </section>
+
+      <!-- section 01 -->
+      <section class="main__section group01" id="experience">
+        <p class="section__title">experience</p>
+        <p>이력 나열</p>
+      </section>
+
+      <!-- section 02 -->
+      <section class="main__section group02" id="education">
+        <p class="section__title">education</p>
+        <p>학력 나열</p>
+      </section>
+
+      <!-- section 03 -->
+      <section class="main__section group03" id="skills">
+        <p class="section__title">skills</p>
+        <p>스킬 플로우</p>
+      </section>
+
+      <!-- section 04 -->
+      <section class="main__section group04" id="licensce">
+        <p class="section__title">licensce</p>
+        <p>라이센스 나열</p>
+      </section>
+
+      <!-- section 05 -->
+      <section class="main__section group05" id="sideproject">
+        <p class="section__title">sideproject</p>
+        <p>사이드프로젝트</p>
+      </section>
+
+      <!-- section 06 -->
+      <section class="main__section group05" id="contact">
+        <p class="section__title">contact</p>
+        <p>연락을 원하시면 이메일로 연락 바랍니다.</p>
+        <a href="mailto:beaverland@naver.com">beaverland@naver.com</a>
+      </section>
+    </main>
+    <!-- main end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+      <section>All rights reserved by beaverland. 2023</section>
+    </footer>
+    <!-- footer end -->
+  </body>
+
+  <script>
+    // 변수를 설정하여 DOM 요소를 선택
+    const header = document.querySelector("header");
+    // 현재 스크롤 위치를 저장할 변수 초기화
+    let lastScrollPosition = 0;
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener("scroll", () => {
+      // 현재 스크롤 위치를 확인
+      const currentScrollPosition = window.scrollY;
+      // 스크롤 업
+      if (lastScrollPosition > currentScrollPosition) {
+        header.classList.remove("hide");
+      }
+      // 스크롤 다운
+      else {
+        header.classList.add("hide");
+      }
+      // 현재 스크롤 위치 업데이트
+      lastScrollPosition = currentScrollPosition;
+    });
+  </script>
 </html>

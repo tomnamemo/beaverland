@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: #111414;
+  color: #efefef;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+  transition: top 0.3s ease-in-out;
+  &.hide {
+    top: -100%;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+    }
+    .menu {
+      display: flex;
+      &__item {
+        font-weight: 700;
+      }
+    }
+  }
+}
+.main {
+  //  섹션시작
+  &__section {
+    display: block;
+    height: 100vh;
+    border-bottom: 1px solid #efefef;
+    padding: 0 200px;
+    // 섹션타이틀
+    .section__title {
+      font-size: 3rem;
+    }
+    // 인트로
+    &.intro {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      text-align: center;
+      .intro__content {
+        &.group01 {
+          .content__text {
+            font-size: 5rem;
+          }
+          .content__imgbox {
+            width: 370px;
+            height: 420px;
+            margin: auto;
+            background-color: #ddd;
+            border: 1px solid #000;
+            border-radius: 30px;
+          }
+        }
+        &.group02 {
+          font-size: 2rem;
+        }
+      }
+    }
+    // group01 경험
+    &.group01 {
+    }
+    // group02 학력
+    &.group02 {
+    }
+    // group03 스킬
+    &.group03 {
+    }
+    // group04 라이센스
+    &.group04 {
+    }
+    // group05
+    &.group05 {
+    }
+  }
+}
+.footer {
+}
