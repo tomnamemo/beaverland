@@ -241,12 +241,12 @@ a {
         &__list {
           display: flex;
           flex-wrap: nowrap;
-          animation: scroll 20s linear infinite;
+          animation: scroll 20s linear infinite alternate-reverse;
           overflow: hidden;
         }
         @keyframes scroll {
           0% {
-            transform: translateX(100%);
+            transform: translateX(0%);
           }
 
           100% {
