@@ -14,34 +14,37 @@ a {
   color: inherit;
 }
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
-  height: 50px;
-  padding: 10px;
+  height: 100px;
+  padding: 20px 40px;
+  //   background-color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  backdrop-filter: blur(8px);
   transition: top 0.3s ease-in-out;
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    animation: drawBorder 1s linear forwards;
-    content: "";
-  }
-  @keyframes drawBorder {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
   &.hide {
     top: -100%;
   }
+  //   &::after {
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 1px;
+  //     background: transparent;
+  //     border-bottom: 1px solid rgba(255, 255, 255);
+  //     animation: drawBorder 1s linear forwards;
+  //     content: "";
+  //   }
+  //   @keyframes drawBorder {
+  //     from {
+  //       width: 0;
+  //     }
+  //     to {
+  //       width: 100%;
+  //     }
+  //   }
 
   &__nav {
     display: flex;
@@ -49,12 +52,18 @@ a {
     align-items: center;
     .header {
       &__logo {
+        font-weight: 700;
+        font-size: 2em;
       }
       &__list {
         display: flex;
-        &__item {
-          font-weight: 700;
-        }
+      }
+      &__item {
+        font-size: 1.4em;
+        margin-right: 20px;
+      }
+      &__item:last-of-type {
+        margin-right: 0;
       }
     }
   }
@@ -64,13 +73,40 @@ a {
   //  섹션정의
   &__section {
     display: block;
-    height: 100vh;
-    border-bottom: 1px solid #0ff;
-    padding: 0 200px;
+    height: auto;
+    // border-bottom: 1px solid #333;
+    padding: 50px 10%;
     // 섹션타이틀
     .section__title {
-      font-size: 3rem;
+      position: relative;
+      font-size: 2.39em;
+      padding: 30px 0;
+      transition: top 0.3s ease-in-out;
+      sup {
+        font-size: 0.6em;
+        color: #fbbf24;
+      }
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255);
+        animation: drawBorder 1s linear forwards;
+        content: "";
+      }
     }
+    @keyframes drawBorder {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
     // 인트로
     &.intro {
       width: 100%;
@@ -82,12 +118,11 @@ a {
       gap: 40px;
       text-align: center;
       .intro__content {
-        &.group01 {
-          background-color: yellow;
-          .intro__title {
+        .intro {
+          &__title {
             font-size: 5rem;
           }
-          .intro__imgbox {
+          &__imgbox {
             width: 370px;
             height: 420px;
             margin: auto;
@@ -95,30 +130,153 @@ a {
             border: 1px solid #000;
             border-radius: 30px;
           }
-        }
-        &.group02 {
-          .intro__subtitle {
+          &__subtitle {
             font-size: 2rem;
           }
         }
       }
     }
-    // group01 경험
-    &.group01 {
+    // works 작업내역
+    &.works {
+      .works__list {
+        .works {
+          &__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 70px 0;
+            border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+            .works {
+              &__info {
+                .works__title {
+                  font-size: 3.8em;
+                  line-height: 1.8;
+                }
+                .works__keywords {
+                  font-size: 1.4em;
+                  .works__kinds {
+                    color: #efefefae;
+                    font-weight: 300;
+                    padding: 4px 6px;
+                    // border: 1px solid rgba(255, 255, 255, 0.5);
+                    // border-radius: 30px;
+                    &:last-of-type {
+                      position: relative;
+                      padding-left: 20px;
+                      border: none;
+                    }
+                    &:last-of-type::before {
+                      position: absolute;
+                      left: 0px;
+                      top: 50%;
+                      transform: translateY(-50%);
+                      content: "|";
+                    }
+                  }
+                }
+              }
+              &__year {
+                .works__period {
+                  font-size: 1.6em;
+                  font-weight: 300;
+                  color: #efefefae;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    // group02 학력
-    &.group02 {
+    // education 학력
+    &.education {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 100px 10%;
+      .edu {
+        &__info {
+          max-width: 40%;
+          .edu__title {
+            font-size: 3.8em;
+            line-height: 1.5;
+            margin-bottom: 30px;
+          }
+          .edu__desc {
+            font-size: 1.6em;
+            font-weight: 400;
+          }
+        }
+        &__list__wrap {
+          min-width: 50%;
+          .edu {
+            &__list {
+              text-align: left;
+              font-size: 1.4em;
+              font-weight: 300;
+              //   color: #efefefae;
+              .edu {
+                &__item {
+                  display: flex;
+                  align-items: center;
+                  .edu__period {
+                    min-width: 230px;
+                  }
+                  .edu__name {
+                  }
+                }
+              }
+              + .edu__list {
+                margin-top: 50px;
+              }
+            }
+          }
+        }
+      }
     }
-    // group03 스킬
-    &.group03 {
+    // skills 스킬
+    &.skills {
+      padding: 100px 0;
+      overflow: hidden;
+      .skills {
+        &__list {
+          display: flex;
+          flex-wrap: nowrap;
+          animation: scroll 20s linear infinite;
+          overflow: hidden;
+        }
+        @keyframes scroll {
+          0% {
+            transform: translateX(100%);
+          }
+
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+        &__item {
+          max-width: 200px;
+          margin-right: 60px;
+        }
+        &__img {
+          width: 100%;
+          vertical-align: top;
+        }
+      }
     }
-    // group04 라이센스
-    &.group04 {
+    // contact
+    &.contact {
+      .contact__title {
+        font-size: 3.8em;
+      }
     }
-    // group05
-    &.group05 {
+    // licensce 라이센스
+    &.licensce {
+    }
+    // sideproject
+    &.sideproject {
     }
   }
-}
-.footer {
+  .footer {
+    padding: 50px 40px;
+  }
 }
