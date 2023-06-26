@@ -69,43 +69,19 @@ a {
   }
 }
 
+.main,
+footer {
+  section {
+    padding: 50px 10%;
+    // background-color: yellow;
+  }
+}
 .main {
   //  섹션정의
   &__section {
-    display: block;
-    height: auto;
+    // display: block;
+    // height: auto;
     // border-bottom: 1px solid #333;
-    padding: 50px 10%;
-    // 섹션타이틀
-    .section__title {
-      position: relative;
-      font-size: 2.39em;
-      padding: 30px 0;
-      transition: top 0.3s ease-in-out;
-      sup {
-        font-size: 0.6em;
-        color: #fbbf24;
-      }
-      &::after {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: transparent;
-        border-bottom: 1px solid rgba(255, 255, 255);
-        animation: drawBorder 1s linear forwards;
-        content: "";
-      }
-    }
-    @keyframes drawBorder {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
 
     // 인트로
     &.intro {
@@ -241,16 +217,16 @@ a {
         &__list {
           display: flex;
           flex-wrap: nowrap;
-          animation: scroll 20s linear infinite alternate-reverse;
+          animation: scroll 1s linear infinite alternate-reverse;
           overflow: hidden;
         }
         @keyframes scroll {
           0% {
-            transform: translateX(0%);
+            transform: translateX(10%);
           }
 
           100% {
-            transform: translateX(-100%);
+            transform: translateX(-10%);
           }
         }
         &__item {
@@ -265,18 +241,102 @@ a {
     }
     // contact
     &.contact {
-      .contact__title {
-        font-size: 3.8em;
+      .contact__content {
+        position: relative;
+        .contact {
+          &__image {
+            position: absolute;
+            top: 0;
+            width: 6em;
+            height: 6em;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              border-radius: 50%;
+            }
+          }
+          &__image::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 1.2em;
+            height: 1.2em;
+            background-color: #c084fc;
+            border: 0.125em solid #efefef;
+            border-radius: 50%;
+            z-index: 90;
+            content: "";
+          }
+          &__title {
+            text-indent: 2em;
+            font-size: 3.8em;
+            max-width: 60%;
+            word-break: keep-all;
+            margin-bottom: 20px;
+          }
+        }
       }
     }
-    // licensce 라이센스
-    &.licensce {
-    }
-    // sideproject
-    &.sideproject {
+    .contact__mail {
+      font-size: 2.39em;
+      color: #c084fc;
+      padding: 20px 0;
     }
   }
-  .footer {
-    padding: 50px 40px;
+  // sideproject
+  &.sideproject {
+  }
+}
+
+// 보더 애니메이션
+.section__title {
+  position: relative;
+  font-size: 2.39em;
+  padding: 30px 0;
+  transition: top 0.3s ease-in-out;
+  sup {
+    font-size: 0.6em;
+    color: #fbbf24;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255);
+    animation: drawBorder 1s linear forwards;
+    content: "";
+  }
+}
+
+.footer {
+  .footer__copyright {
+    position: relative;
+    padding-top: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: transparent;
+      border-bottom: 1px solid rgba(255, 255, 255);
+      animation: drawBorder 1s linear forwards;
+      content: "";
+    }
+  }
+}
+
+@keyframes drawBorder {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }

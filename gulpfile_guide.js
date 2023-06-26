@@ -8,8 +8,9 @@ const port = 8090;
  /*=============================
  @Path 정의
  ==============================*/
- const src = "./src";
- const dist = "./dist";
+ const src = "./src/guide";
+ const serverRoot = "./dist"
+ const dist = "./dist/guide";
  const path = {
 	styles: {
 		input: src+'/sass/',
@@ -28,11 +29,11 @@ const port = 8090;
 		input: src+'/images/sprite/',
 		output: dist+'/images/sprite/',
 		css : src+'/sass/vendor/',
-		html:src+'/html/guide/sprite.html',
+		html:src+'/html/sprite.html',
 	},
 	html: {
-		input: src+'/**/*.html',
-		output: dist+"/",
+		input: src+'/html/**/*.html',
+		output: dist+"/html/",
 		exc: '!./html/**/include/*.html, !./html/**/include/'
 	},
 	js: {
@@ -50,7 +51,7 @@ const port = 8090;
 const browserSync = require('browser-sync');
 function bs(done){
 	browserSync.init({
-		server : {baseDir : dist},
+		server : {baseDir : serverRoot},
         port: port,
         ui: { port: port + 1 },
         ghostMode: false,
@@ -187,7 +188,7 @@ function imgCopy(done){
 function imgClean(){return del([path.images.output])}
 
 //clean-html
-function htmlClean(){return del([path.html.output+"**/*.html"])}
+function htmlClean(){return del([path.html.output])}
 
 
 //clean-html-include
@@ -305,15 +306,15 @@ const build = gulp.series(imgUpdate,html,jsCopy, min_js , sass);
 
 
 // tasks 선언
-exports.default = watch;
+exports.guideWatch = watch;
 exports.build = build;
-exports.min_js = min_js;
-exports.bs = bs;
+exports.guideSprite = renderSprite;
 exports.spriteIcon = spriteIcon;
 exports.datauri = datauri;
 exports.sass = sass;
 exports.imageMin =imgMin;
 exports.imgUpdate = imgUpdate;
+exports.min_js = min_js;
 exports.html = html;
 exports.htmlPUG = htmlPUG;
 exports.includeHTML = includeHTML;
@@ -322,4 +323,5 @@ exports.jsCopy = jsCopy;
 exports.imgCopy = imgCopy;
 exports.imgClean = imgClean;
 exports.htmlClean = htmlClean;
-exports.guideSprite = renderSprite;
+exports.bs = bs;
+
