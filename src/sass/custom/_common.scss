@@ -66,6 +66,7 @@ a {
         margin-right: 0;
       }
     }
+    z-index: 999;
   }
 }
 
@@ -338,5 +339,38 @@ footer {
   }
   to {
     width: 100%;
+  }
+}
+
+//  media screen
+//  media screen
+//  media screen
+
+/* desktop 규격 */
+@media screen and (min-width: 1024px) {
+  body,
+  html {
+    background-color: Red;
+  }
+}
+
+/* tablet 규격 */
+@media screen and (max-width: 1023px) {
+  body,
+  html {
+    background-color: pink;
+  }
+}
+
+/* mobile 규격 */
+@media screen and (max-width: 540px) {
+  body,
+  html {
+    background-color: navy;
+  }
+  .header {
+    &.hide {
+      top: 0;
+    }
   }
 }
