@@ -350,7 +350,6 @@ footer {
 @media screen and (min-width: 1024px) {
   body,
   html {
-    background-color: Red;
   }
 }
 
@@ -358,7 +357,7 @@ footer {
 @media screen and (max-width: 1023px) {
   body,
   html {
-    background-color: pink;
+    background-color: gray;
   }
 }
 
@@ -366,11 +365,11 @@ footer {
 @media screen and (max-width: 540px) {
   body,
   html {
-    background-color: navy;
+    background-color: #111414;
   }
   .header {
     &.hide {
-      top: 0;
+      //   top: 0;
     }
   }
 }
