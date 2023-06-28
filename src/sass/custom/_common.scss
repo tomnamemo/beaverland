@@ -8,65 +8,79 @@ html {
   height: 100%;
   background-color: #111414;
   color: #efefef;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
 }
 a {
   text-decoration: none;
   color: inherit;
 }
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  color: inherit;
+  cursor: pointer;
+}
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
   padding: 20px 40px;
-  //   background-color: rgba(0, 0, 0, 0.2);
   background-color: transparent;
-  backdrop-filter: blur(8px);
+  //   backdrop-filter: blur(8px);
   transition: top 0.3s ease-in-out;
+  z-index: 999;
+  &__logo,
+  &__menuButton {
+    font-size: 1.1em;
+    font-weight: 700;
+  }
+  &__menuButton {
+    padding: 6px 10px;
+    border: 2px solid #fbbf24;
+    border-radius: 30px;
+  }
+
   &.hide {
     top: -100%;
   }
-  //   &::after {
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 1px;
-  //     background: transparent;
-  //     border-bottom: 1px solid rgba(255, 255, 255);
-  //     animation: drawBorder 1s linear forwards;
-  //     content: "";
-  //   }
-  //   @keyframes drawBorder {
-  //     from {
-  //       width: 0;
-  //     }
-  //     to {
-  //       width: 100%;
-  //     }
-  //   }
-
   &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: none;
+    position: absolute;
+    top: 74px;
+    right: 0;
+    text-align: center;
     .header {
-      &__logo {
-        font-weight: 700;
-        font-size: 2em;
-      }
       &__list {
         display: flex;
+        flex-direction: column;
+        text-align: right;
       }
       &__item {
-        font-size: 1.4em;
-        margin-right: 20px;
-      }
-      &__item:last-of-type {
-        margin-right: 0;
+        opacity: 0;
+        position: relative;
+        right: -100px;
+        font-size: 1.2em;
+        padding: 12px 40px;
+        overflow: hidden;
+        // transition: all 1s ease;
+        a {
+          height: auto;
+          padding: 6px 10px;
+          border: 2px solid #fbbf24;
+          border-radius: 30px;
+        }
       }
     }
-    z-index: 999;
   }
 }
 

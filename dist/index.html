@@ -10,13 +10,19 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" href="/images/favicon.ico" />
-    <title>비버랜드</title>
+    <script src="/js/vendor/jquery-3.6.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Beaverland</title>
   </head>
   <body>
     <!-- header start -->
     <header class="header">
+      <h1 class="header__logo"><a href="#">BEAVERLAND</a></h1>
+      <button class="header__menuButton">MENU</button>
       <nav class="header__nav">
-        <h1 class="header__logo"><a href="#">Beaverland</a></h1>
         <ul class="header__list">
           <!-- 인트로, 이력, 교육, 스킬, 자격증, 스터디 연락처 -->
           <li class="header__item"><a href="#works">works</a></li>
@@ -277,7 +283,129 @@
     <!-- footer end -->
   </body>
 
+  <!-- <script>
+    $(document).ready(function () {
+      var isOpen = false; // 토글 상태를 나타내는 변수 초기값은 false
+      // .header__menuButton 클릭 이벤트 설정
+      $(".header__menuButton").click(function () {
+        // .header__menuButton을 처음으로 클릭할 경우 (메뉴가 열린 상태를 나타냄)
+        if (!isOpen) {
+          $(".header__nav").fadeIn(); // .header__nav를 fadeIn 효과로 표시
+          $(".header__menuButton").html("CLOSE"); // 버튼 내용을 'CLOSE'로 변경
+          isOpen = true; // isOpen 변수값을 true로 변경
+        } else {
+          // .header__menuButton을 두 번째 이상 클릭할 경우 (메뉴가 닫힌 상태를 나타냄)
+          $(".header__nav").fadeOut(); // .header__nav를 fadeOut 효과로 숨김
+          $(".header__menuButton").html("MENU"); // 버튼 내용을 'MENU'로 변경
+          isOpen = false; // isOpen 변수값을 false로 변경
+        }
+        // 메뉴가 열린 경우 .header__item을 순차적으로 fadeIn 효과로 표시
+        if (isOpen) {
+          // 메뉴가 열린 경우
+          var i = 0;
+          // .header__item을 순서대로 페이드 인 하면서 오른쪽에서 왼쪽으로 이동
+          $(".header__item").each(function () {
+            $(this)
+              .delay(400 * i)
+              .queue(function () {
+                // 페이드 인 효과 적용(opacity를 1로 변경)
+                $(this).css({ opacity: "1" }).dequeue();
+                // 애니메이션 효과를 easeInElastic로 변경. 왼쪽 위치 값을 변경하여 이동 효과 구현
+                $(this).animate({ right: "0" }, 600, "easeOutElastic");
+              });
+            i++;
+          });
+        } else {
+          // 메뉴가 닫힌 경우
+          var j = 0;
+          // .header__item을 순서대로 페이드 아웃 하면서 왼쪽으로 이동
+          $($(".header__item").get().reverse()).each(function () {
+            $(this)
+              .delay(300 * j)
+              .queue(function () {
+                $(this).css({ opacity: "0", right: "-100px" }).dequeue();
+              });
+            j++;
+          });
+          // 모든 .header__item이 사라진 후에 .header__nav를 숨김
+          $(".header__nav")
+            .delay(300 * j)
+            .fadeOut();
+        }
+      });
+    });
+  </script> -->
+
   <script>
+    $(document).ready(function () {
+      var isOpen = false; // 메뉴가 열려있는지 여부를 확인하는 변수. 초기값은 false(닫힌 상태)
+
+      // 메뉴를 닫는 함수 생성
+      function closeMenu() {
+        $(".header__menuButton").html("MENU"); // 메뉴 버튼 텍스트를 'MENU'로 변경
+        var j = 0;
+        // .header__item의 순서를 거꾸로 하여 메뉴를 숨기는 애니메이션 처리
+        $($(".header__item").get().reverse()).each(function () {
+          $(this)
+            .delay(300 * j) // 각 메뉴 아이템에 대해 지연 시간(300ms)을 부여하여 순차적으로 처리
+            .animate({ opacity: "0", right: "-100px" }, 300); // 수정: .animate()로 투명도와 위치를 동시에 변경
+          j++;
+        });
+        // 모든 .header__item이 처리된 후에 .header__nav를 숨김
+        $(".header__nav")
+          .delay(300 * j)
+          .fadeOut();
+        isOpen = false; // 메뉴 상태를 닫힌 상태(false)로 변경
+      }
+
+      // .header__menuButton 클릭 이벤트 설정
+      $(".header__menuButton").click(function () {
+        if (!isOpen) {
+          // 메뉴가 닫힌 상태일 때
+          $(".header__nav").fadeIn(); // .header__nav를 fadeIn 효과로 표시
+          $(".header__menuButton")
+            .html("CLOSE")
+            .css({ backgroundColor: "#fbbf24" }); // 버튼 내용을 'CLOSE'로 변경
+          isOpen = true; // 메뉴 상태를 열린 상태(true)로 변경
+        } else {
+          // 메뉴가 열린 상태일 때
+          closeMenu(); // 메뉴 닫기 함수 호출
+        }
+
+        if (isOpen) {
+          // 메뉴가 열린 상태일 때
+          var i = 0;
+          // .header__item을 순서대로 표시 하는 애니메이션
+          $(".header__item").each(function () {
+            $(this)
+              .delay(400 * i) // 각 메뉴 아이템에 대해 지연 시간(400ms)을 부여하여 순차적으로 처리
+              .queue(function () {
+                $(this).css({ opacity: "1" }).dequeue(); // 아이템의 투명도를 1로 변경
+                $(this).animate({ right: "0px" }, 600, "easeOutElastic"); // 아이템의 위치를 오른쪽으로 0px로 변경하는 애니메이션 효과 적용
+              });
+            i++;
+          });
+        }
+      });
+
+      // .header__item 안의 a 태그를 클릭하면 해당 섹션으로 이동 후 메뉴가 닫히게 처리
+      $(".header__item a").click(function (e) {
+        e.preventDefault(); // 클릭한 a 태그의 기본 동작(페이지 이동)을 막음
+        var target = $(this).attr("href"); // 클릭한 a 태그의 href 속성 값을 가져옴
+        // 해당 섹션 위치로 스크롤 애니메이션으로 이동
+        $("html, body").animate(
+          {
+            scrollTop: $(target).offset().top,
+          },
+          500, // 스크롤 속도: 500ms
+          function () {
+            closeMenu(); // 해당 섹션 위치로 이동 후 메뉴를 닫음
+          }
+        );
+      });
+    });
+  </script>
+  <!-- <script>
     // 변수를 설정하여 DOM 요소를 선택
     const header = document.querySelector("header");
     // 현재 스크롤 위치를 저장할 변수 초기화
@@ -296,6 +424,23 @@
       }
       // 현재 스크롤 위치 업데이트
       lastScrollPosition = currentScrollPosition;
+    });
+  </script> -->
+  <script>
+    $(document).ready(function () {
+      // 스크롤 위치에 따라 .header__menuButton의 배경색을 왼쪽에서 오른쪽으로 채우기
+      $(window).on("scroll", function () {
+        var winHeight = $(window).height(); // 브라우저 창의 높이
+        var totalScrollHeight = $(document).height() - winHeight; // 스크롤되는 전체 영역
+        var currentScroll = $(this).scrollTop(); // 현재 스크롤 위치
+        // 배경색을 변경하는 CSS를 적용 (현재 스크롤 위치에 비례하여 배경색이 오른쪽으로 채워짐)
+        $(".header__menuButton").css(
+          "background",
+          "linear-gradient(to right, #fbbf24 " +
+            (currentScroll / totalScrollHeight) * 100 +
+            "%, transparent 0%)"
+        );
+      });
     });
   </script>
 </html>
