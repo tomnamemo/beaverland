@@ -72,11 +72,17 @@ button {
         font-size: 1.2em;
         padding: 12px 40px;
         overflow: hidden;
-        // transition: all 1s ease;
+        &:hover {
+          transform: rotate(26deg);
+          a {
+            background-color: #c084fc;
+          }
+        }
         a {
           height: auto;
           padding: 6px 10px;
           border: 2px solid #fbbf24;
+          background-color: #111414;
           border-radius: 30px;
         }
       }
@@ -94,35 +100,116 @@ footer {
 .main {
   //  섹션정의
   &__section {
-    // display: block;
-    // height: auto;
-    // border-bottom: 1px solid #333;
-
-    // 인트로
+    // 인트로섹션
     &.intro {
-      width: 100%;
+      position: relative;
       height: 100vh;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-      text-align: center;
       .intro__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* 요소들을 수직, 수평 정렬하기 위하여 추가한 CSS 속성 */
+
         .intro {
-          &__title {
-            font-size: 5rem;
+          &__mainTitle {
+            position: absolute;
+            font-size: 22vh;
+            opacity: 0.5;
+            &.fromTop {
+              top: -100px;
+              animation: mainTitleTop 2s forwards;
+            }
+            &.fromBottom {
+              bottom: -100px;
+              animation: mainTitleBottom 2s forwards;
+            }
+            @keyframes mainTitleTop {
+              65% {
+                top: calc(50% - 200px);
+                font-size: 4.5rem;
+                opacity: 1;
+              }
+              100% {
+                top: 19%;
+                font-size: 4.5rem;
+                opacity: 1;
+              }
+            }
+            @keyframes mainTitleBottom {
+              65% {
+                bottom: 50%;
+                font-size: 4.55rem;
+                opacity: 1;
+              }
+              100% {
+                bottom: 30%;
+                font-size: 4.5rem;
+                opacity: 1;
+              }
+            }
           }
-          &__imgbox {
-            width: 370px;
-            height: 420px;
-            margin: auto;
-            background-color: #ddd;
-            border: 1px solid #000;
+          &__imgBox {
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            width: 260px;
+            height: 260px;
             border-radius: 30px;
+            animation: introImgBox 2s ease-in-out;
+            background: url(../images/intro.png) center no-repeat;
+            background-size: cover;
+            @keyframes introImgBox {
+              0% {
+                height: 0;
+              }
+              66% {
+                height: 0;
+              }
+              100% {
+                height: 260px;
+              }
+            }
           }
-          &__subtitle {
-            font-size: 2rem;
+          &__subTitle {
+            position: absolute;
+            font-size: 1.2rem;
+            text-align: center;
+            opacity: 1;
+            &.first {
+              bottom: 22%;
+              animation: subTitleFirst 3.8s ease-in;
+            }
+            @keyframes subTitleFirst {
+              0% {
+                opacity: 0;
+                bottom: 20%;
+              }
+              50% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+                bottom: 22%;
+              }
+            }
+            &.second {
+              bottom: 19%;
+              animation: subTitleSecond 3.8s ease-in;
+            }
+            @keyframes subTitleSecond {
+              0% {
+                opacity: 0;
+                bottom: 17%;
+              }
+              70% {
+                opacity: 0;
+              }
+              100% {
+                opacity: 1;
+                bottom: 19%;
+              }
+            }
           }
         }
       }
