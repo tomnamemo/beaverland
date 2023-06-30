@@ -28,21 +28,39 @@ button {
 }
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
   height: 100px;
   padding: 20px 40px;
-  background-color: transparent;
-  //   backdrop-filter: blur(8px);
   transition: top 0.3s ease-in-out;
+  transform: translateY(-100%);
+  animation: fadeIn 0.5s 2.8s forwards;
+  opacity: 1;
   z-index: 999;
   &__logo,
   &__menuButton {
     font-size: 1.1em;
     font-weight: 700;
+  }
+  @keyframes fadeIn {
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    &.hide {
+      top: -100%;
+    }
   }
   &__menuButton {
     padding: 6px 10px;
@@ -50,9 +68,6 @@ button {
     border-radius: 30px;
   }
 
-  &.hide {
-    top: -100%;
-  }
   &__nav {
     display: none;
     position: absolute;
@@ -109,63 +124,76 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center; /* 요소들을 수직, 수평 정렬하기 위하여 추가한 CSS 속성 */
-
         .intro {
           &__mainTitle {
             position: absolute;
-            font-size: 22vh;
-            opacity: 0.5;
+            font-size: rem(72);
+            opacity: 0;
             &.fromTop {
-              top: -100px;
-              animation: mainTitleTop 2s forwards;
+              top: 19%;
+              transform: translateY(-200%) scale(3);
+              animation: mainTitleTop 1.5s forwards;
             }
             &.fromBottom {
-              bottom: -100px;
-              animation: mainTitleBottom 2s forwards;
+              bottom: 30%;
+              transform: translateY(200%) scale(3);
+              animation: mainTitleBottom 1.5s forwards;
             }
             @keyframes mainTitleTop {
               65% {
-                top: calc(50% - 200px);
-                font-size: 4.5rem;
                 opacity: 1;
+                transform: translateY(150px) scale(1);
+              }
+              75% {
+                opacity: 1;
+                transform: translateY(150px) scale(1);
               }
               100% {
-                top: 19%;
-                font-size: 4.5rem;
                 opacity: 1;
+                transform: translateY(0) scale(1);
               }
             }
             @keyframes mainTitleBottom {
               65% {
-                bottom: 50%;
-                font-size: 4.55rem;
                 opacity: 1;
+                transform: translateY(-150px) scale(1);
+              }
+              75% {
+                opacity: 1;
+                transform: translateY(-150px) scale(1);
               }
               100% {
-                bottom: 30%;
-                font-size: 4.5rem;
                 opacity: 1;
+                transform: translateY(0) scale(1);
               }
             }
           }
           &__imgBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             left: 50%;
             top: 45%;
             transform: translate(-50%, -50%);
+            height: 0;
             width: 260px;
-            height: 260px;
             border-radius: 30px;
-            animation: introImgBox 2s ease-in-out;
-            background: url(../images/intro.png) center no-repeat;
+            animation: introImgBox 0.8s 1.2s forwards ease-in-out;
             background-size: cover;
+            overflow: hidden;
+            .intro__img {
+              border-radius: 30px;
+              width: (260/1920 * 100vw);
+              height: (260/1920 * 100vw);
+              max-width: 260px;
+              max-height: 260px;
+              min-width: 220px;
+              min-height: 220px;
+              background: url(../images/intro.png) center center no-repeat;
+              background-size: cover;
+            }
             @keyframes introImgBox {
-              0% {
-                height: 0;
-              }
-              66% {
-                height: 0;
-              }
               100% {
                 height: 260px;
               }
@@ -178,37 +206,15 @@ footer {
             opacity: 1;
             &.first {
               bottom: 22%;
-              animation: subTitleFirst 3.8s ease-in;
-            }
-            @keyframes subTitleFirst {
-              0% {
-                opacity: 0;
-                bottom: 20%;
-              }
-              50% {
-                opacity: 0;
-              }
-              100% {
-                opacity: 1;
-                bottom: 22%;
-              }
+              animation: fadeIn 1s 2s forwards;
+              opacity: 0;
+              transform: translateY(20px);
             }
             &.second {
+              opacity: 0;
               bottom: 19%;
-              animation: subTitleSecond 3.8s ease-in;
-            }
-            @keyframes subTitleSecond {
-              0% {
-                opacity: 0;
-                bottom: 17%;
-              }
-              70% {
-                opacity: 0;
-              }
-              100% {
-                opacity: 1;
-                bottom: 19%;
-              }
+              animation: fadeIn 1s 2.3s forwards;
+              transform: translateY(20px);
             }
           }
         }
@@ -392,53 +398,54 @@ footer {
   }
 }
 
-// 보더 애니메이션
+//  보더 애니메이션
 .section__title {
   position: relative;
-  font-size: 2.39em;
+  font-size: 38px;
   padding: 30px 0;
-  transition: top 0.3s ease-in-out;
   sup {
     font-size: 0.6em;
     color: #fbbf24;
   }
-  &::after {
+  &:before {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
+    height: 2px;
+    background-color: #fbbf24;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.5s ease-out;
+  }
+  &.animate__border:before {
+    transform: scaleX(1);
+  }
+}
+
+// }
+
+.footer__copyright {
+  position: relative;
+  padding-top: 30px;
+  color: rgba(255, 255, 255, 0.5);
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
     height: 1px;
     background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255);
-    animation: drawBorder 1s linear forwards;
+    border-bottom: 1px solid #c084fc;
     content: "";
+    transition: all 0.5s ease-out;
   }
 }
 
-.footer {
-  .footer__copyright {
-    position: relative;
-    padding-top: 30px;
-    color: rgba(255, 255, 255, 0.5);
-    &::after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: transparent;
-      border-bottom: 1px solid rgba(255, 255, 255);
-      animation: drawBorder 1s linear forwards;
-      content: "";
-    }
-  }
-}
-
-@keyframes drawBorder {
-  from {
-    width: 0;
-  }
-  to {
+//푸터 영역에서 스크롤 이벤트 발생 시, 애니메이션 효과를 추가해주는 클래스
+.footer__animate {
+  &:after {
     width: 100%;
   }
 }

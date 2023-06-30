@@ -41,9 +41,11 @@
       <!-- section intro -->
       <section class="main__section intro">
         <div class="intro__content group01">
-          <p class="intro__mainTitle fromTop">beaver</p>
+          <p class="intro__mainTitle fromTop">hohohoho</p>
           <p class="intro__mainTitle fromBottom">hohohoho</p>
-          <div class="intro__imgBox"></div>
+          <div class="intro__imgBox">
+            <div class="intro__img"></div>
+          </div>
           <p class="intro__subTitle first">I'M A CREATIVE WEB PUBLISHER WHO</p>
           <p class="intro__subTitle second">
             HAS A PASSION AND SNICAL KINDNESS
@@ -52,7 +54,7 @@
       </section>
 
       <!-- section 01 works-->
-      <section class="main__section works" id="works">
+      <section class="main__section works" id="section works">
         <p class="section__title">Latest works <sup>(4)</sup></p>
         <ul class="works__list">
           <li class="works__item">
@@ -132,7 +134,7 @@
       </section>
 
       <!-- section 02 education-->
-      <section class="main__section education" id="education">
+      <section class="main__section education" id="section education">
         <!-- <p class="section__title">Education</p> -->
         <div class="edu__info">
           <p class="edu__title">My way of getting things done</p>
@@ -176,7 +178,7 @@
         </div>
       </section>
       <!-- section skills-->
-      <section class="main__section skills" id="skills">
+      <section class="main__section skills" id="section skills">
         <!-- <p class="section__title">Skills</p> -->
         <ul class="skills__list">
           <li class="skills__item">
@@ -251,7 +253,7 @@
           </li>
         </ul>
       </section>
-      <section class="main__section contact" id="contact">
+      <section class="main__section contact" id="section contact">
         <!-- <p class="section__title">
           Let’s talk about a project, collaboration or an idea you may have
         </p> -->
@@ -280,60 +282,6 @@
     </footer>
     <!-- footer end -->
   </body>
-
-  <!-- <script>
-    $(document).ready(function () {
-      var isOpen = false; // 토글 상태를 나타내는 변수 초기값은 false
-      // .header__menuButton 클릭 이벤트 설정
-      $(".header__menuButton").click(function () {
-        // .header__menuButton을 처음으로 클릭할 경우 (메뉴가 열린 상태를 나타냄)
-        if (!isOpen) {
-          $(".header__nav").fadeIn(); // .header__nav를 fadeIn 효과로 표시
-          $(".header__menuButton").html("CLOSE"); // 버튼 내용을 'CLOSE'로 변경
-          isOpen = true; // isOpen 변수값을 true로 변경
-        } else {
-          // .header__menuButton을 두 번째 이상 클릭할 경우 (메뉴가 닫힌 상태를 나타냄)
-          $(".header__nav").fadeOut(); // .header__nav를 fadeOut 효과로 숨김
-          $(".header__menuButton").html("MENU"); // 버튼 내용을 'MENU'로 변경
-          isOpen = false; // isOpen 변수값을 false로 변경
-        }
-        // 메뉴가 열린 경우 .header__item을 순차적으로 fadeIn 효과로 표시
-        if (isOpen) {
-          // 메뉴가 열린 경우
-          var i = 0;
-          // .header__item을 순서대로 페이드 인 하면서 오른쪽에서 왼쪽으로 이동
-          $(".header__item").each(function () {
-            $(this)
-              .delay(400 * i)
-              .queue(function () {
-                // 페이드 인 효과 적용(opacity를 1로 변경)
-                $(this).css({ opacity: "1" }).dequeue();
-                // 애니메이션 효과를 easeInElastic로 변경. 왼쪽 위치 값을 변경하여 이동 효과 구현
-                $(this).animate({ right: "0" }, 600, "easeOutElastic");
-              });
-            i++;
-          });
-        } else {
-          // 메뉴가 닫힌 경우
-          var j = 0;
-          // .header__item을 순서대로 페이드 아웃 하면서 왼쪽으로 이동
-          $($(".header__item").get().reverse()).each(function () {
-            $(this)
-              .delay(300 * j)
-              .queue(function () {
-                $(this).css({ opacity: "0", right: "-100px" }).dequeue();
-              });
-            j++;
-          });
-          // 모든 .header__item이 사라진 후에 .header__nav를 숨김
-          $(".header__nav")
-            .delay(300 * j)
-            .fadeOut();
-        }
-      });
-    });
-  </script> -->
-
   <script>
     $(document).ready(function () {
       var isOpen = false; // 메뉴가 열려있는지 여부를 확인하는 변수. 초기값은 false(닫힌 상태)
@@ -403,9 +351,9 @@
       });
     });
   </script>
-  <!-- <script>
+  <script>
     // 변수를 설정하여 DOM 요소를 선택
-    const header = document.querySelector("header");
+    const header = document.querySelector(".header__logo");
     // 현재 스크롤 위치를 저장할 변수 초기화
     let lastScrollPosition = 0;
     // 스크롤 이벤트 리스너 추가
@@ -423,11 +371,11 @@
       // 현재 스크롤 위치 업데이트
       lastScrollPosition = currentScrollPosition;
     });
-  </script> -->
+  </script>
   <script>
     $(document).ready(function () {
-      // 스크롤 위치에 따라 .header__menuButton의 배경색을 왼쪽에서 오른쪽으로 채우기
-      $(window).on("scroll", function () {
+      $(window).on("scroll touchmove", function () {
+        // 스크롤 위치에 따라 .header__menuButton의 배경색을 왼쪽에서 오른쪽으로 채우기
         var winHeight = $(window).height(); // 브라우저 창의 높이
         var totalScrollHeight = $(document).height() - winHeight; // 스크롤되는 전체 영역
         var currentScroll = $(this).scrollTop(); // 현재 스크롤 위치
@@ -438,6 +386,39 @@
             (currentScroll / totalScrollHeight) * 100 +
             "%, transparent 0%)"
         );
+
+        // 각 section 제목 영역에 대해 각각 실행
+        $(".section__title").each(function () {
+          const sectionTop = $(this).offset().top;
+
+          // 윈도우 스크롤바 위치가 제목 영역의 상단 절반이 넘어간 경우에 대해서 추가
+          if ($(window).scrollTop() > sectionTop - $(window).height() / 2) {
+            $(this).addClass("animate__border");
+          } else {
+            $(this).removeClass("animate__border");
+          }
+        });
+        //.section__title 모바일용 터치스타트 추가 스크립트
+        $(".section__title").on("touchstart", function () {
+          $(this).addClass("animate__border");
+        });
+
+        // footer 영역에 대해서 추가
+        let scrollTop = $(window).scrollTop();
+        let footerTop = $(".contact").offset().top;
+        let footerHeight = $(".contact").outerHeight();
+
+        // 윈도우 스크롤바 위치가 footer 영역의 상단 절반에 도달한 경우에 대해서 추가
+        if (scrollTop > footerTop - $(window).height() / 2) {
+          $(".footer__copyright").addClass("footer__animate");
+        } else {
+          $(".footer__animate").removeClass("footer__animate");
+        }
+
+        //.footer__copyright 모바일용 터치스타트 추가 스크립트
+        $(".contact").on("touchstart", function () {
+          $(".footer__copyright").addClass("footer__animate");
+        });
       });
     });
   </script>
