@@ -54,7 +54,7 @@
       </section>
 
       <!-- section 01 works-->
-      <section class="main__section works" id="section works">
+      <section class="main__section works" id="works">
         <p class="section__title">Latest works <sup>(4)</sup></p>
         <ul class="works__list">
           <li class="works__item">
@@ -134,7 +134,7 @@
       </section>
 
       <!-- section 02 education-->
-      <section class="main__section education" id="section education">
+      <section class="main__section education" id="education">
         <!-- <p class="section__title">Education</p> -->
         <div class="edu__info">
           <p class="edu__title">My way of getting things done</p>
@@ -178,7 +178,7 @@
         </div>
       </section>
       <!-- section skills-->
-      <section class="main__section skills" id="section skills">
+      <section class="main__section skills" id="skills">
         <!-- <p class="section__title">Skills</p> -->
         <ul class="skills__list">
           <li class="skills__item">
@@ -253,7 +253,7 @@
           </li>
         </ul>
       </section>
-      <section class="main__section contact" id="section contact">
+      <section class="main__section contact" id="contact">
         <!-- <p class="section__title">
           Let’s talk about a project, collaboration or an idea you may have
         </p> -->
@@ -390,7 +390,6 @@
         // 각 section 제목 영역에 대해 각각 실행
         $(".section__title").each(function () {
           const sectionTop = $(this).offset().top;
-
           // 윈도우 스크롤바 위치가 제목 영역의 상단 절반이 넘어간 경우에 대해서 추가
           if ($(window).scrollTop() > sectionTop - $(window).height() / 2) {
             $(this).addClass("animate__border");
@@ -403,18 +402,17 @@
           $(this).addClass("animate__border");
         });
 
-        // footer 영역에 대해서 추가
+        // footer 영역의 스크롤바 애니메이션에 대해 추가
         let scrollTop = $(window).scrollTop();
         let footerTop = $(".contact").offset().top;
         let footerHeight = $(".contact").outerHeight();
 
-        // 윈도우 스크롤바 위치가 footer 영역의 상단 절반에 도달한 경우에 대해서 추가
+        // 윈도우 스크롤바 위치가 contact 영역의 상단 절반에 도달한 경우에 대해서 추가
         if (scrollTop > footerTop - $(window).height() / 2) {
           $(".footer__copyright").addClass("footer__animate");
         } else {
           $(".footer__animate").removeClass("footer__animate");
         }
-
         //.footer__copyright 모바일용 터치스타트 추가 스크립트
         $(".contact").on("touchstart", function () {
           $(".footer__copyright").addClass("footer__animate");
