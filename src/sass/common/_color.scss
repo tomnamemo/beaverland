@@ -33,37 +33,37 @@ $stormy-blue: #54759c;
 $white-seven: #e1e1e1;
 $seaweed: #11d081;
 $pinkish-grey-two: #cccccc;
-$silver:#b9bec3;
-$lightblue:#7cb5ec;
+$silver: #b9bec3;
+$lightblue: #7cb5ec;
 $light-navy: #11335d;
-$dark-sky-blue-two:#4793dc;
-$greyish-brown:#555555;
-$silver-two:#c0c4c9;
-$purpleish-blue:#575cf2;
-$greyish-brown-two:#3a3026;
+$dark-sky-blue-two: #4793dc;
+$greyish-brown: #555555;
+$silver-two: #c0c4c9;
+$purpleish-blue: #575cf2;
+$greyish-brown-two: #3a3026;
 //미션
-$sun-yellow:#feda3c;
-$black-four:#313131;
-$milk-chocolate:#704424;
+$sun-yellow: #feda3c;
+$black-four: #313131;
+$milk-chocolate: #704424;
 
-
-
-
-.colorRed {color:$lipstick !important;}
-.colorBlue {color:$nice-blue !important;}
-.glowBlue {
-  position:relative;
-  z-index:1;
-  &:after {
-    content:"";
-    width:100%;
-    height:50%;
-    display: block;
-    position:absolute;
-    background:#34a0e1;
-    left:0;
-    bottom:0;
-    z-index:-1;
-  }
+.color-red {
+	color: $lipstick !important;
 }
-
+.color-blue {
+	color: $nice-blue !important;
+}
+.glow-blue {
+	position: relative;
+	z-index: 1;
+	&:after {
+		content: "";
+		width: 100%;
+		height: 50%;
+		display: block;
+		position: absolute;
+		background: #34a0e1;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+}

@@ -2,36 +2,65 @@
 
 // 간격관련
 
-$interval_unit:5; //간격단위
+$interval_unit: 5; //간격단위
 
 //margin-top -> mgT5~mgT125
-@for $i from 0 to 25 { // 5~120px
-  .mgT#{$i*$interval_unit} {margin-top:rem($i*$interval_unit*2)}
-  .mgL#{$i*$interval_unit} {margin-left:rem($i*$interval_unit*2)}
-  .mgR#{$i*$interval_unit} {margin-right:rem($i*$interval_unit*2)}
-  .mgB#{$i*$interval_unit} {margin-bottom:rem($i*$interval_unit*2)}
+@for $i from 0 to 25 {
+	// 5~120px
+	.mgT#{$i*$interval_unit} {
+		margin-top: rem($i * $interval_unit * 2);
+	}
+	.mgL#{$i*$interval_unit} {
+		margin-left: rem($i * $interval_unit * 2);
+	}
+	.mgR#{$i*$interval_unit} {
+		margin-right: rem($i * $interval_unit * 2);
+	}
+	.mgB#{$i*$interval_unit} {
+		margin-bottom: rem($i * $interval_unit * 2);
+	}
 }
 
 //width -> w5 ~ w200
-@for $i from 1 to 40 { // 5~200px
-  .w#{$i*$interval_unit} {width:rem($i*$interval_unit*2)}
+@for $i from 1 to 40 {
+	// 5~200px
+	.w#{$i*$interval_unit} {
+		width: rem($i * $interval_unit * 2);
+	}
 }
 
 //width -> w5per ~ w100per
-@for $i from 1 to 21 { // 5~200px
-  $widthPer:percentage($i*$interval_unit*0.01);
-  .w#{$i*$interval_unit}per {width:$widthPer}
+@for $i from 1 to 21 {
+	// 5~200px
+	$widthPer: percentage($i * $interval_unit * 0.01);
+	.w#{$i*$interval_unit}per {
+		width: $widthPer;
+	}
 }
 
-
-
 //정렬관련
-.lt {text-align:left}
-.rt {text-align:right}
-.cnt {text-align:center}
-.blockCnt {margin-left:auto;margin-right:auto;display:block;}
+.lt {
+	text-align: left;
+}
+.rt {
+	text-align: right;
+}
+.cnt {
+	text-align: center;
+}
+.block-cnt {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
 
 //플랙스관련
-.flex0 {flex:0 !important;}
-.flex1 {flex:1 !important;}
-.flex2 {flex:2 !important;}
+.flex0 {
+	flex: 0 !important;
+}
+.flex1 {
+	flex: 1 !important;
+}
+.flex2 {
+	flex: 2 !important;
+}
