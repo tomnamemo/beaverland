@@ -4,89 +4,52 @@
 
 body,
 html {
-	width: 100%;
-	height: 100%;
-	background-color: #111414;
-	color: #efefef;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	box-sizing: border-box;
+	width: 100%; height: 100%; background-color: #111414; color: #efefef;
+	margin: 0; padding: 0; list-style: none; box-sizing: border-box;
 }
-a {
-	text-decoration: none;
-	color: inherit;
-}
-button {
-	background: inherit;
-	border: none;
-	box-shadow: none;
-	border-radius: 0;
-	overflow: visible;
-	color: inherit;
-	cursor: pointer;
-}
+
+a {text-decoration: none; color: inherit;}
+
+button {background: inherit; border: none; box-shadow: none; border-radius: 0; overflow: visible; color: inherit; cursor: pointer;}
+
 .header {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100px;
-	padding: 20px 40px;
-	transition: top 0.3s ease-in-out;
-	transform: translateY(-100%);
+	display: flex; justify-content: flex-end; align-items: center;
+	position: fixed; top: 0; width: 100%; height: 100px; padding: 20px 40px;
 	animation: fadeIn 0.5s 2.8s forwards;
-	opacity: 1;
+	transition: top 0.3s ease-in-out; transform: translateY(-100%); opacity: 1;
 	z-index: 999;
+
 	&_logo,
 	&_menuButton {
-		font-size: 1.1em;
-		font-weight: 700;
+		font-size: 1.1em; font-weight: 700;
 	}
+
 	@keyframes fadeIn {
 		100% {
-			transform: translateY(0);
-			opacity: 1;
+			transform: translateY(0); opacity: 1;
 		}
 	}
 
 	&_logo {
-		position: absolute;
-		top: 50%;
-		left: 40px;
-		transform: translateY(-50%);
-		transition: all 0.3s ease-in-out;
+		position: absolute; top: 50%; left: 40px; transform: translateY(-50%); transition: all 0.3s ease-in-out;
 		&.hide {
 			top: -100%;
 		}
 	}
+
 	&_menu_button {
-		padding: 6px 10px;
-		border: 2px solid #fbbf24;
-		border-radius: 30px;
+		padding: 6px 10px; border: 2px solid #fbbf24; border-radius: 30px;
 	}
 
 	&_nav {
-		display: none;
-		position: absolute;
-		top: 74px;
-		right: 0;
-		text-align: center;
+		display: none; position: absolute; top: 74px; right: 0; text-align: center;
+
 		.header {
 			&_list {
-				display: flex;
-				flex-direction: column;
-				text-align: right;
+				display: flex; flex-direction: column; text-align: right;
 			}
 			&_item {
-				opacity: 0;
-				position: relative;
-				right: -100px;
-				font-size: 1.2em;
-				padding: 12px 40px;
-				overflow: hidden;
+				opacity: 0; position: relative; right: -100px; font-size: 1.2em; padding: 12px 40px; overflow: hidden;
 				&:hover {
 					transform: rotate(26deg);
 					a {
@@ -94,11 +57,7 @@ button {
 					}
 				}
 				a {
-					height: auto;
-					padding: 6px 10px;
-					border: 2px solid #fbbf24;
-					background-color: #111414;
-					border-radius: 30px;
+					height: auto; padding: 6px 10px; border: 2px solid #fbbf24; background-color: #111414; border-radius: 30px;
 				}
 			}
 		}
@@ -109,89 +68,58 @@ button {
 footer {
 	section {
 		padding: 50px 10%;
-		// background-color: yellow;
 	}
 }
+
 .main {
 	padding-top: 100px;
 	&_section {
+
 		// 인트로섹션
 		&.intro {
-			position: relative;
-			height: 100vh;
+			position: relative; height: 100vh;
 			.intro_content {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center; /* 요소들을 수직, 수평 정렬하기 위하여 추가한 CSS 속성 */
+				display: flex; flex-direction: column; justify-content: center; align-items: center; /* 요소들을 수직, 수평 정렬하기 위하여 추가한 CSS 속성 */
 				.intro {
 					&_main_title {
-						position: absolute;
-						font-size: rem(72);
-						opacity: 0;
-						&.from-top {
-							top: 19%;
-							transform: translateY(-200%) scale(3);
-							animation: mainTitleTop 1.5s forwards;
-						}
-						&.from-bottom {
-							bottom: 30%;
-							transform: translateY(200%) scale(3);
-							animation: mainTitleBottom 1.5s forwards;
-						}
+						position: absolute; font-size: rem(72); opacity: 0;
+						&.from-top {top: 19%; transform: translateY(-200%) scale(3); animation: mainTitleTop 1.5s forwards;}
+						&.from-bottom {bottom: 30%; transform: translateY(200%) scale(3); animation: mainTitleBottom 1.5s forwards;}
+
 						@keyframes mainTitleTop {
 							65% {
-								opacity: 1;
-								transform: translateY(150px) scale(1);
+								opacity: 1; transform: translateY(150px) scale(1);
 							}
 							75% {
-								opacity: 1;
-								transform: translateY(150px) scale(1);
+								opacity: 1; transform: translateY(150px) scale(1);
 							}
 							100% {
-								opacity: 1;
-								transform: translateY(0) scale(1);
+								opacity: 1; transform: translateY(0) scale(1);
 							}
 						}
 						@keyframes mainTitleBottom {
 							65% {
-								opacity: 1;
-								transform: translateY(-150px) scale(1);
+								opacity: 1; transform: translateY(-150px) scale(1);
 							}
 							75% {
-								opacity: 1;
-								transform: translateY(-150px) scale(1);
+								opacity: 1; transform: translateY(-150px) scale(1);
 							}
 							100% {
-								opacity: 1;
-								transform: translateY(0) scale(1);
+								opacity: 1; transform: translateY(0) scale(1);
 							}
 						}
 					}
+
 					&_img_box {
-						display: flex;
-						justify-content: center;
-						align-items: center;
-						position: absolute;
-						left: 50%;
-						top: 45%;
-						transform: translate(-50%, -50%);
-						height: 0;
-						width: 260px;
-						border-radius: 30px;
-						animation: introImgBox 0.8s 1.2s forwards ease-in-out;
+						display: flex; justify-content: center; align-items: center;
+						position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); height: 0; width: 260px;
+						border-radius: 30px; animation: introImgBox 0.8s 1.2s forwards ease-in-out;
 						background-size: cover;
 						overflow: hidden;
+
 						.intro_img {
-							border-radius: 30px;
-							width: (260/1920 * 100vw);
-							height: (260/1920 * 100vw);
-							max-width: 260px;
-							max-height: 260px;
-							min-width: 220px;
-							min-height: 220px;
-							background: url(../images/intro.png) center center no-repeat;
-							background-size: cover;
+							width: (260/1920 * 100vw); height: (260/1920 * 100vw); max-width: 260px; max-height: 260px; min-width: 220px; min-height: 220px;
+							background: url(../images/intro.png) center center no-repeat; background-size: cover;border-radius: 30px;
 						}
 						@keyframes introImgBox {
 							100% {
@@ -199,71 +127,45 @@ footer {
 							}
 						}
 					}
+
 					&_sub_title {
-						position: absolute;
-						font-size: 1.2rem;
-						text-align: center;
-						opacity: 1;
+						position: absolute; font-size: 1.2rem; text-align: center; opacity: 1;
+
 						&.first {
-							bottom: 22%;
-							animation: fadeIn 1s 2s forwards;
-							opacity: 0;
-							transform: translateY(20px);
+							bottom: 22%; animation: fadeIn 1s 2s forwards; opacity: 0; transform: translateY(20px);
 						}
 						&.second {
-							opacity: 0;
-							bottom: 19%;
-							animation: fadeIn 1s 2.3s forwards;
-							transform: translateY(20px);
+							opacity: 0; bottom: 19%; animation: fadeIn 1s 2.3s forwards; transform: translateY(20px);
 						}
 					}
 				}
 			}
 		}
+
 		// works 작업내역
 		&.works {
 			.works_list {
 				.works {
 					&_item {
-						display: flex;
-						justify-content: space-between;
-						align-items: flex-end;
-						padding: 70px 0;
-						border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+						display: flex; justify-content: space-between; align-items: flex-end; padding: 70px 0; border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+
 						.works {
 							&_info {
 								.works_title {
-									font-size: 3.8em;
-									line-height: 1.8;
+									font-size: 3.8em; line-height: 1.8;
 								}
 								.works_keywords {
 									font-size: 1.4em;
 									.works_kinds {
-										color: #efefefae;
-										font-weight: 300;
-										padding: 4px 6px;
-										// border: 1px solid rgba(255, 255, 255, 0.5);
-										// border-radius: 30px;
-										&:last-of-type {
-											position: relative;
-											padding-left: 20px;
-											border: none;
-										}
-										&:last-of-type::before {
-											position: absolute;
-											left: 0px;
-											top: 50%;
-											transform: translateY(-50%);
-											content: "|";
-										}
+										color: #efefefae; font-weight: 300; padding: 4px 6px;
+										&:last-of-type {position: relative; padding-left: 20px; border: none;}
+										&:last-of-type::before {position: absolute; left: 0px; top: 50%; transform: translateY(-50%); content: "|";}
 									}
 								}
 							}
 							&_year {
 								.works_period {
-									font-size: 1.6em;
-									font-weight: 300;
-									color: #efefefae;
+									font-size: 1.6em; font-weight: 300; color: #efefefae;
 								}
 							}
 						}
@@ -271,37 +173,26 @@ footer {
 				}
 			}
 		}
+
 		// education 학력
 		&.education {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-end;
-			padding: 100px 10%;
+			display: flex; justify-content: space-between; align-items: flex-end; padding: 100px 10%;
+
 			.edu {
 				&_info {
 					max-width: 40%;
-					.edu_title {
-						font-size: 3.8em;
-						line-height: 1.5;
-						margin-bottom: 30px;
-					}
-					.edu_desc {
-						font-size: 1.6em;
-						font-weight: 400;
-					}
+					.edu_title {font-size: 3.8em; line-height: 1.5; margin-bottom: 30px;}
+					.edu_desc { font-size: 1.6em; font-weight: 400;}
 				}
+
 				&_list_wrap {
 					min-width: 50%;
 					.edu {
 						&_list {
-							text-align: left;
-							font-size: 1.4em;
-							font-weight: 300;
-							//   color: #efefefae;
+							text-align: left; font-size: 1.4em; font-weight: 300;
 							.edu {
 								&_item {
-									display: flex;
-									align-items: center;
+									display: flex; align-items: center;
 									.edu_period {
 										min-width: 230px;
 									}
@@ -317,130 +208,84 @@ footer {
 				}
 			}
 		}
+
 		// skills 스킬
 		&.skills {
 			overflow: hidden;
+
 			.skills {
 				&_list {
-					display: flex;
-					flex-wrap: nowrap;
-					animation: scroll 1s linear infinite alternate-reverse;
+					display: flex; flex-wrap: nowrap; animation: scroll 1s linear infinite alternate-reverse;
+					margin: 0 -10%; padding: 70px 0;
 					overflow: hidden;
-					margin: 0 -10%;
-					padding: 70px 0;
 				}
 				@keyframes scroll {
 					0% {
 						transform: translateX(10%);
 					}
-
 					100% {
 						transform: translateX(-10%);
 					}
 				}
-				&_item {
-					max-width: 200px;
-					margin-right: 60px;
-				}
-				&_img {
-					width: 100%;
-					vertical-align: top;
-				}
+				&_item {max-width: 200px; margin-right: 60px;}
+				&_img {width: 100%; vertical-align: top;}
 			}
 		}
-		// contact
+
 		&.contact {
 			.contact_content {
 				position: relative;
 				.contact {
 					&_image {
-						position: absolute;
-						top: 0;
-						width: 6em;
-						height: 6em;
+						position: absolute;top: 0;width: 6em;height: 6em;
 						img {
-							width: 100%;
-							height: 100%;
-							object-fit: cover;
-							object-position: center;
-							border-radius: 50%;
+							width: 100%;height: 100%;object-fit: cover;object-position: center;border-radius: 50%;
 						}
 					}
 					&_image::after {
-						position: absolute;
-						top: 0;
-						right: 0;
-						width: 1.2em;
-						height: 1.2em;
-						background-color: #c084fc;
-						border: 0.125em solid #efefef;
-						border-radius: 50%;
+						position: absolute;top: 0;right: 0;width: 1.2em;height: 1.2em;
+						background-color: #c084fc;border: 0.125em solid #efefef;border-radius: 50%;
 						z-index: 90;
 						content: "";
 					}
 					&_title {
-						text-indent: 2em;
-						font-size: 3.8em;
-						max-width: 60%;
-						word-break: keep-all;
-						margin-bottom: 20px;
+						text-indent: 2em;font-size: 3.8em;max-width: 60%;word-break: keep-all;margin-bottom: 20px;
 					}
 				}
 			}
 		}
 		.contact_mail {
-			font-size: 2.39em;
-			color: #c084fc;
-			padding: 20px 0;
+			font-size: 2.39em;color: #c084fc;padding: 20px 0;
+		}
+		// sideproject
+		&.sideproject {
+		}
+
+		//  보더 애니메이션
+		.section_title {
+			position: relative;font-size: 38px;padding: 30px 0;
+			sup {
+				font-size: 0.6em;color: #fbbf24;
+			}
+			&:before {
+				position: absolute;bottom: -1px;left: 0;width: 100%;height: 2px;
+				background-color: #fbbf24;transform: scaleX(0);transform-origin: left center;transition: transform 0.5s ease-out;
+				content: "";
+			}
+			&.animate_border:before {
+				transform: scaleX(1);
+			}
 		}
 	}
-	// sideproject
-	&.sideproject {
-	}
 }
-
-//  보더 애니메이션
-.section_title {
-	position: relative;
-	font-size: 38px;
-	padding: 30px 0;
-	sup {
-		font-size: 0.6em;
-		color: #fbbf24;
-	}
-	&:before {
-		position: absolute;
-		bottom: -1px;
-		left: 0;
-		width: 100%;
-		height: 2px;
-		background-color: #fbbf24;
-		content: "";
-		transform: scaleX(0);
-		transform-origin: left center;
-		transition: transform 0.5s ease-out;
-	}
-	&.animate_border:before {
-		transform: scaleX(1);
-	}
-}
-
-// }
 
 .footer_copyright {
-	position: relative;
-	padding-top: 30px;
-	color: rgba(255, 255, 255, 0.5);
+	position: relative;padding-top: 30px;color: rgba(255, 255, 255, 0.5);
 	&:after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background: transparent;
-		border-bottom: 1px solid #c084fc;
-		content: "";
+		position: absolute;top: 0;left: 0;width: 0;height: 1px;
+		background: transparent;border-bottom: 1px solid #c084fc;
 		transition: all 0.5s ease-out;
+		content: "";
 	}
 }
 
@@ -451,9 +296,7 @@ footer {
 	}
 }
 
-//  media screen
-//  media screen
-//  media screen
+
 
 /* desktop 규격 */
 @media screen and (min-width: 1024px) {
@@ -466,7 +309,6 @@ footer {
 @media screen and (max-width: 1023px) {
 	body,
 	html {
-		background-color: gray;
 	}
 }
 
@@ -474,7 +316,6 @@ footer {
 @media screen and (max-width: 540px) {
 	body,
 	html {
-		background-color: #111414;
 	}
 	.header {
 		&.hide {
