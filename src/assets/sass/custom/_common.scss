@@ -70,7 +70,7 @@ section {width: calc(100vw - 300px);}
 	section {
 
 		.section-title {
-			position: relative;padding: 30px 0;font-size: 2rem;
+			position: relative;padding: 32px 0;font-size: 2rem;
 			sup {
 				font-size: 0.6em;color: #fbbf24;
 			}
@@ -149,7 +149,7 @@ section {width: calc(100vw - 300px);}
 		&.works {
 			.works-list {
 				.work {
-					padding: 40px 0; border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+					padding: 40px; border-bottom: 1px solid rgba(200, 200, 200, 0.2);
 					.info {
 						.customer {font-size: 1.125rem;color:rgba(255,255,255,.6);}
 						.title {
@@ -177,15 +177,15 @@ section {width: calc(100vw - 300px);}
 		// education 학력
 		&.education {
 			.flex-wrap {
-				display: flex; align-items: flex-start;justify-content: space-between;gap:160px; padding: 60px 0;
+				display: flex; align-items: flex-start;justify-content: space-between;gap:80px; padding: 60px 40px;
 				.group {
 					&.g1 {
 						.edu-title {font-size: 3.8rem; line-height: 1.5; margin-bottom: 30px;}
-						flex-grow: 0;flex-basis:26%;
+						flex-basis:auto;
 					}
 					&.g2 {
 						display: flex;flex-direction: column;gap: 24px;
-						flex-grow: 1;
+						flex-basis:50%;
 						h4 {font-size: 1.25rem;color:rgba(255,255,255,.8);}
 						.item {
 							display: flex;flex-direction: column; gap: 16px;padding: 32px 0;
@@ -198,7 +198,7 @@ section {width: calc(100vw - 300px);}
 											flex-basis: 230px;color:rgba(255,255,255,.6);
 										}
 										.label {
-											font-weight: 400;
+											font-weight: 400;word-break: keep-all;
 										}
 										&:has(.academy):last-of-type {margin-top: 20px;}
 										.academy {
@@ -264,7 +264,7 @@ section {width: calc(100vw - 300px);}
 				}
 				.phone,
 				.mail {
-					font-size: 2rem;color: #c084fc;padding: 20px 0;
+					font-size: 2rem;color: #c084fc;padding: 24px 8px;
 				}
 			}
 		}

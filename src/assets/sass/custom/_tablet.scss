@@ -1,41 +1,41 @@
 @charset "UTF-8";
 
-@include respond-to(mobile) {
+@include respond-to(tablet) {
 	body,
 	html {
 	}
 	.header {
-		height: 80px; padding: 24px;
+		height: 100px; padding: 32px;
 		.logo,
 		.menu-button {
-			font-size: 1rem;
+			font-size: 1.125rem;
 		}
-		.logo {left: 24px;}
-		.menu-button {padding: 8px 12px;}
+		.logo {left: 32px;}
+		.menu-button {padding: 4px 12px;}
 		.nav {
-			top: 74px; right: 0;
+			top: 84px;
 			.menu_list {
-				gap: 8px;
+				gap:0px;
 				.menu {
-					font-size: 1rem; padding: 16px 24px;
-					a {padding:8px 12px;}
+					font-size: 1.5rem; padding: 12px 32px;
+					a {padding:4px 12px;}
 				}
 			}
 		}
 	}
-	section {width: calc(100vw - 48px);}
+	section {width: calc(100vw - 64px);}
 	.main {
-		gap:60px;padding-top: 80px;
+		gap:60px;padding-top: 100px;
 		section {
 			.section-title {
-				padding: 32px 0;font-size: 1.5rem;
+				padding: 32px 0;font-size: 1.75rem;
 			}
 			// 인트로섹션
 			&.intro {
-				height:  calc(100dvh - 80px);
+				height:  calc(100dvh - 100px);
 				.content {
 					.main-title {
-						font-size: 2.5rem; opacity: 0;
+						font-size: 3.5rem; opacity: 0;
 						&.from-top {top: 19%; }
 						&.from-bottom {bottom: 30%;}
 					}
@@ -51,12 +51,12 @@
 						}
 					}
 					.sub-title {
-						font-size: 1rem; color: rgba(255,255,255,.6);
+						font-size: 1.5rem;
 						&.first {
 							bottom: 22%;
 						}
 						&.second {
-							bottom: 19%;
+							bottom: 18%;
 						}
 					}
 				}
@@ -66,17 +66,17 @@
 			&.works {
 				.works-list {
 					.work {
-						padding: 32px 16px;
+						padding: 40px 24px;
 						.info {
-							.customer {font-size: 1rem;}
+							.customer {font-size: 1.125rem;}
 							.title {
-								font-size: 1.5rem;word-break: keep-all;
+								margin-top: 8px;font-size: 2.8rem;word-break: keep-all;
 							}
 						}
 						.desc {
 							flex-direction:column; gap: 8px;margin-top: 16px;
 							.keywords {
-								font-size: 1rem;
+								font-size: 1.5rem;
 								.kinds {
 									padding: 4px;
 									&:last-of-type {display: block; padding-left: 2px;margin-top: 4px;}
@@ -84,7 +84,7 @@
 								}
 							}
 							.period {
-								font-size: 1rem;text-align: right;
+								font-size: 1.5rem;text-align: right;
 							}
 						}
 					}
@@ -101,15 +101,15 @@
 						}
 						&.g2 {
 							gap: 0px;flex-basis:100%;
-							h4 {font-size: 1.125rem;}
+							h4 {font-size: 1.5rem;}
 							.item {
-								display: flex;flex-direction: column; gap: 24px;padding: 32px 16px;
+								display: flex;flex-direction: column; gap: 16px;padding: 40px 24px;
 									.text-list {
-										gap:16px;font-size: 1.125rem;
+										gap:16px;font-size: 1.25rem;
 										&.licenses { gap: 0px;}
 										.text {
 											.period {
-												flex-basis: 80px;padding-bottom: 4px;
+												flex-basis: 130px;padding-bottom: 8px;
 											}
 											.label {
 												word-break: keep-all;
@@ -140,7 +140,7 @@
 			// skills section
 			&.skills {
 				.skill-list {
-						margin: 0 -60%; padding: 60px 0;
+						margin: 0 -40%; padding: 60px 0;
 					.skill {
 						max-width: 80px; margin-right:16px;width: 80px;
 						.img {width: 100%;vertical-align: middle;}
@@ -156,7 +156,7 @@
 					}
 					.phone,
 					.mail {
-						font-size: 1.125rem;padding: 8px 0;
+						font-size: 1.5rem;padding: 8px 0;
 					}
 				}
 			}
