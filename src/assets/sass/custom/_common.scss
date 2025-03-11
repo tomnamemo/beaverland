@@ -18,38 +18,33 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 	animation: fadeIn 0.5s 2.8s forwards;
 	transition: top 0.3s ease-in-out; transform: translateY(-100%); opacity: 1;
 	z-index: 999;
-
-	&_logo,
-	&_menuButton {
-		font-size: 1.1em; font-weight: 700;
+	.logo,
+	.menu-button {
+		font-size: 1.125rem; font-weight: 700;
 	}
-
 	@keyframes fadeIn {
 		100% {
 			transform: translateY(0); opacity: 1;
 		}
 	}
-
-	&_logo {
+	.logo {
 		position: absolute; top: 50%; left: 40px; transform: translateY(-50%); transition: all 0.3s ease-in-out;
 		&.hide {
 			top: -100%;
 		}
 	}
-
-	&_menu_button {
-		padding: 6px 10px; border: 2px solid #fbbf24; border-radius: 30px;
+	.menu-button {
+		padding: 0px 12px; border: 2px solid #fbbf24; border-radius: 24px;
 	}
 
-	&_nav {
+	.nav {
 		display: none; position: absolute; top: 74px; right: 0; text-align: center;
 
-		.header {
-			&_list {
-				display: flex; flex-direction: column; text-align: right;
-			}
-			&_item {
-				opacity: 0; position: relative; right: -100px; font-size: 1.2em; padding: 12px 40px; overflow: hidden;
+		.menu_list {
+			display: flex; flex-direction: column; text-align: right;
+			.menu {
+				opacity: 0; position: relative; right: -100px; font-size: 1.125rem; padding: 6px 40px;
+				overflow: hidden;
 				&:hover {
 					transform: rotate(26deg);
 					a {
@@ -57,7 +52,7 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 					}
 				}
 				a {
-					height: auto; padding: 6px 10px; border: 2px solid #fbbf24; background-color: #111414; border-radius: 30px;
+					height: auto; padding: 0px 12px; border: 2px solid #fbbf24; background-color: #111414; border-radius: 24px;
 				}
 			}
 		}
@@ -66,204 +61,16 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 
 .main,
 footer {
-	section {
-		padding: 50px 10%;
-	}
+	display: flex;align-items: center;flex-direction: column;
 }
+section {width: calc(100vw - 300px);}
 
 .main {
-	padding-top: 100px;
-	&_section {
+	gap:160px;padding-top: 100px;overflow: hidden;
+	section {
 
-		// 인트로섹션
-		&.intro {
-			position: relative; height: 100vh;
-			.intro_content {
-				display: flex; flex-direction: column; justify-content: center; align-items: center; /* 요소들을 수직, 수평 정렬하기 위하여 추가한 CSS 속성 */
-				.intro {
-					&_main_title {
-						position: absolute; font-size: rem(72); opacity: 0;
-						&.from-top {top: 19%; transform: translateY(-200%) scale(3); animation: mainTitleTop 1.5s forwards;}
-						&.from-bottom {bottom: 30%; transform: translateY(200%) scale(3); animation: mainTitleBottom 1.5s forwards;}
-
-						@keyframes mainTitleTop {
-							65% {
-								opacity: 1; transform: translateY(150px) scale(1);
-							}
-							75% {
-								opacity: 1; transform: translateY(150px) scale(1);
-							}
-							100% {
-								opacity: 1; transform: translateY(0) scale(1);
-							}
-						}
-						@keyframes mainTitleBottom {
-							65% {
-								opacity: 1; transform: translateY(-150px) scale(1);
-							}
-							75% {
-								opacity: 1; transform: translateY(-150px) scale(1);
-							}
-							100% {
-								opacity: 1; transform: translateY(0) scale(1);
-							}
-						}
-					}
-
-					&_img_box {
-						display: flex; justify-content: center; align-items: center;
-						position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); height: 0; width: 260px;
-						border-radius: 30px; animation: introImgBox 0.8s 1.2s forwards ease-in-out;
-						background-size: cover;
-						overflow: hidden;
-
-						.intro_img {
-							width: (260/1920 * 100vw); height: (260/1920 * 100vw); max-width: 260px; max-height: 260px; min-width: 220px; min-height: 220px;
-							background: url(../images/intro.png) center center no-repeat; background-size: cover;border-radius: 30px;
-						}
-						@keyframes introImgBox {
-							100% {
-								height: 260px;
-							}
-						}
-					}
-
-					&_sub_title {
-						position: absolute; font-size: 1.2rem; text-align: center; opacity: 1;
-
-						&.first {
-							bottom: 22%; animation: fadeIn 1s 2s forwards; opacity: 0; transform: translateY(20px);
-						}
-						&.second {
-							opacity: 0; bottom: 19%; animation: fadeIn 1s 2.3s forwards; transform: translateY(20px);
-						}
-					}
-				}
-			}
-		}
-
-		// works 작업내역
-		&.works {
-			.works_list {
-				.works {
-					&_item {
-						display: flex; justify-content: space-between; align-items: flex-end; padding: 70px 0; border-bottom: 1px solid rgba(200, 200, 200, 0.2);
-
-						.works {
-							&_info {
-								.works_title {
-									font-size: 3.8em; line-height: 1.8;
-								}
-								.works_keywords {
-									font-size: 1.4em;
-									.works_kinds {
-										color: #efefefae; font-weight: 300; padding: 4px 6px;
-										&:last-of-type {position: relative; padding-left: 20px; border: none;}
-										&:last-of-type::before {position: absolute; left: 0px; top: 50%; transform: translateY(-50%); content: "|";}
-									}
-								}
-							}
-							&_year {
-								.works_period {
-									font-size: 1.6em; font-weight: 300; color: #efefefae;
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-
-		// education 학력
-		&.education {
-			display: flex; justify-content: space-between; align-items: flex-end; padding: 100px 10%;
-
-			.edu {
-				&_info {
-					max-width: 40%;
-					.edu_title {font-size: 3.8em; line-height: 1.5; margin-bottom: 30px;}
-					.edu_desc { font-size: 1.6em; font-weight: 400;}
-				}
-
-				&_list_wrap {
-					min-width: 50%;
-					.edu {
-						&_list {
-							text-align: left; font-size: 1.4em; font-weight: 300;
-							.edu {
-								&_item {
-									display: flex; align-items: center;
-									.edu_period {
-										min-width: 230px;
-									}
-									.edu_name {
-									}
-								}
-							}
-							+ .edu_list {
-								margin-top: 50px;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		// skills 스킬
-		&.skills {
-			overflow: hidden;
-
-			.skills {
-				&_list {
-					display: flex; flex-wrap: nowrap; animation: scroll 1s linear infinite alternate-reverse;
-					margin: 0 -10%; padding: 70px 0;
-					overflow: hidden;
-				}
-				@keyframes scroll {
-					0% {
-						transform: translateX(10%);
-					}
-					100% {
-						transform: translateX(-10%);
-					}
-				}
-				&_item {max-width: 200px; margin-right: 60px;}
-				&_img {width: 100%; vertical-align: top;}
-			}
-		}
-
-		&.contact {
-			.contact_content {
-				position: relative;
-				.contact {
-					&_image {
-						position: absolute;top: 0;width: 6em;height: 6em;
-						img {
-							width: 100%;height: 100%;object-fit: cover;object-position: center;border-radius: 50%;
-						}
-					}
-					&_image::after {
-						position: absolute;top: 0;right: 0;width: 1.2em;height: 1.2em;
-						background-color: #c084fc;border: 0.125em solid #efefef;border-radius: 50%;
-						z-index: 90;
-						content: "";
-					}
-					&_title {
-						text-indent: 2em;font-size: 3.8em;max-width: 60%;word-break: keep-all;margin-bottom: 20px;
-					}
-				}
-			}
-		}
-		.contact_mail {
-			font-size: 2.39em;color: #c084fc;padding: 20px 0;
-		}
-		// sideproject
-		&.sideproject {
-		}
-
-		//  보더 애니메이션
-		.section_title {
-			position: relative;font-size: 38px;padding: 30px 0;
+		.section-title {
+			position: relative;padding: 30px 0;font-size: 2rem;
 			sup {
 				font-size: 0.6em;color: #fbbf24;
 			}
@@ -272,27 +79,221 @@ footer {
 				background-color: #fbbf24;transform: scaleX(0);transform-origin: left center;transition: transform 0.5s ease-out;
 				content: "";
 			}
-			&.animate_border:before {
+			&.animate-border:before {
 				transform: scaleX(1);
 			}
 		}
+
+		// 인트로섹션
+		&.intro {
+			position: relative; height:  calc(100dvh - 100px);
+			.content {
+				display: flex; flex-direction: column; justify-content: center; align-items: center;
+				.main-title {
+					position: absolute; font-size: 4.5rem; opacity: 0;
+					&.from-top {top: 19%; transform: translateY(-200%) scale(3); animation: mainTitleTop 1.5s forwards;}
+					&.from-bottom {bottom: 30%; transform: translateY(200%) scale(3); animation: mainTitleBottom 1.5s forwards;}
+
+					@keyframes mainTitleTop {
+						65% {
+							opacity: 1; transform: translateY(150px) scale(1);
+						}
+						75% {
+							opacity: 1; transform: translateY(150px) scale(1);
+						}
+						100% {
+							opacity: 1; transform: translateY(0) scale(1);
+						}
+					}
+					@keyframes mainTitleBottom {
+						65% {
+							opacity: 1; transform: translateY(-150px) scale(1);
+						}
+						75% {
+							opacity: 1; transform: translateY(-150px) scale(1);
+						}
+						100% {
+							opacity: 1; transform: translateY(0) scale(1);
+						}
+					}
+				}
+				.img-box {
+					display: flex; justify-content: center; align-items: center;
+					position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); height: 0; width: 260px;
+					border-radius: 24px; animation: introImgBox 0.8s 1.2s forwards ease-in-out;
+					background-size: cover;
+					overflow: hidden;
+					.intro-img {
+						max-width: 260px; max-height: 260px; min-width: 220px; min-height: 220px;
+						background: url(../images/intro.png) center center no-repeat; background-size: cover;border-radius: 24px;
+					}
+					@keyframes introImgBox {
+						100% {
+							height: 260px;
+						}
+					}
+				}
+				.sub-title {
+					position: absolute; font-size: 1.125rem; text-align: center; opacity: 1;
+					&.first {
+						bottom: 22%; animation: fadeIn 1s 2s forwards; opacity: 0; transform: translateY(20px);
+					}
+					&.second {
+						opacity: 0; bottom: 19%; animation: fadeIn 1s 2.3s forwards; transform: translateY(20px);
+					}
+				}
+			}
+		}
+
+		// works 섹션
+		&.works {
+			.works-list {
+				.work {
+					padding: 40px 0; border-bottom: 1px solid rgba(200, 200, 200, 0.2);
+					.info {
+						.customer {font-size: 1.125rem;color:rgba(255,255,255,.6);}
+						.title {
+							font-size: 3.8rem;
+						}
+					}
+					.desc {
+						display: flex;justify-content: space-between;margin-top: 24px;
+						.keywords {
+							font-size: 1.4rem;
+							.kinds {
+								padding: 4px 6px; color:rgba(255,255,255,.6);font-weight: 300;
+								&:last-of-type {position: relative; padding-left: 20px; border: none;}
+								&:last-of-type::before {position: absolute; left: 0px; top: 50%; transform: translateY(-50%); content: "|";}
+							}
+						}
+						.period {
+							font-size: 1.25rem; font-weight: 300; color: #efefefae;
+						}
+					}
+				}
+			}
+		}
+
+		// education 학력
+		&.education {
+			.flex-wrap {
+				display: flex; align-items: flex-start;justify-content: space-between;gap:160px; padding: 60px 0;
+				.group {
+					&.g1 {
+						.edu-title {font-size: 3.8rem; line-height: 1.5; margin-bottom: 30px;}
+						flex-grow: 0;flex-basis:26%;
+					}
+					&.g2 {
+						display: flex;flex-direction: column;gap: 24px;
+						flex-grow: 1;
+						h4 {font-size: 1.25rem;color:rgba(255,255,255,.8);}
+						.item {
+							display: flex;flex-direction: column; gap: 16px;padding: 32px 0;
+								.text-list {
+									display: flex;flex-direction: column;gap:8px;
+									text-align: left; font-size: 1.4rem; font-weight: 300;
+									.text {
+										display: flex; align-items: flex-start;
+										.period {
+											flex-basis: 230px;color:rgba(255,255,255,.6);
+										}
+										.label {
+											font-weight: 400;
+										}
+										&:has(.academy):last-of-type {margin-top: 20px;}
+										.academy {
+											ul {
+												 font-size: 0.875rem;color:rgba(255,255,255,.6);
+												 li {
+													padding: 2px 0 ;
+													&:first-of-type{padding-top: 8px;}
+												 }
+											}
+										}
+									}
+								}
+						    +.item {border-top: 1px solid hsla(0, 0%, 78%, .2);;}
+						}
+					}
+				}
+			}
+		}
+
+		// skills section
+		&.skills {
+			.skill-list {
+					display: flex; flex-wrap: nowrap; animation: scroll 1s linear infinite alternate-reverse;
+					padding: 80px 0;
+					overflow: hidden;
+				@keyframes scroll {
+					0% {
+						transform: translateX(10%);
+					}
+					100% {
+						transform: translateX(-10%);
+					}
+				}
+				.skill {
+					max-width: 200px; margin-right: 60px;
+					&:last-of-type{margin-right: 0;}
+					.img {width: 100%; vertical-align: top;}
+				}
+			}
+		}
+
+		//contact section
+		&.contact {
+			.content {
+				position: relative;
+				.image-wrap {
+					display: none; /*임시*/
+					position: absolute;top: 0;width: 6em;height: 6em;
+					&::after {
+						position: absolute;top: 0;right: 0;width: 1.2em;height: 1.2em;
+						background-color: #c084fc;border: 0.125em solid #efefef;border-radius: 50%;
+						z-index: 90;
+						content: "";
+					}
+					img {
+						width: 100%;height: 100%;object-fit: cover;object-position: center;border-radius: 50%;
+					}
+				}
+				.title {
+					// text-indent: 2em;
+					font-size: 3.8em;max-width: 60%;word-break: keep-all;margin-bottom: 20px;
+				}
+				.phone,
+				.mail {
+					font-size: 2rem;color: #c084fc;padding: 20px 0;
+				}
+			}
+		}
+
+		// sideproject section
+		&.sideproject {
+
+		}
+
+
 	}
 }
-
-.footer_copyright {
-	position: relative;padding-top: 30px;color: rgba(255, 255, 255, 0.5);
-	&:after {
-		position: absolute;top: 0;left: 0;width: 0;height: 1px;
-		background: transparent;border-bottom: 1px solid #c084fc;
-		transition: all 0.5s ease-out;
-		content: "";
+.footer {
+	padding: 60px 0;
+	.footer_copyright {
+		position: relative;padding-top: 30px;color: rgba(255, 255, 255, 0.5);
+		&:after {
+			position: absolute;top: 0;left: 0;width: 0;height: 1px;
+			background: transparent;border-bottom: 1px solid #c084fc;
+			transition: all 0.5s ease-out;
+			content: "";
+		}
 	}
-}
 
-//푸터 영역에서 스크롤 이벤트 발생 시, 애니메이션 효과를 추가해주는 클래스
-.footer_animate {
-	&:after {
-		width: 100%;
+	//푸터 영역에서 스크롤 이벤트 발생 시, 애니메이션 효과를 추가해주는 클래스
+	.footer_animate {
+		&:after {
+			width: 100%;
+		}
 	}
 }
 
