@@ -65,7 +65,7 @@
 			&.works {
 				.works-list {
 					.work {
-						position: relative;padding: 40px 24px;
+						position: relative;padding: 40px 8px;
 						.info {
 							.customer {font-size: 1.125rem;}
 							.title {
@@ -82,7 +82,7 @@
 								}
 							}
 							.period {
-								position: absolute;right: 24px;bottom: 38px;
+								position: absolute;right: 8px;bottom: 38px;
 								font-size: 1.125rem;text-align: right;
 							}
 						}
@@ -102,7 +102,7 @@
 							gap: 0px;flex-basis:100%;
 							h4 {font-size: 1.5rem;}
 							.item {
-								display: flex;flex-direction: column; gap: 16px;padding: 40px 24px;
+								display: flex;flex-direction: column; gap: 16px;padding: 40px 8px;
 									.text-list {
 										gap:16px;font-size: 1.25rem;
 										&.licenses { gap: 0px;}
@@ -151,11 +151,11 @@
 			&.contact {
 				.content {
 					.title {
-						font-size: 2rem;max-width: 100%;word-break: keep-all;margin-bottom: 16px;
+						font-size: 2rem;max-width: 100%;padding: 0 8px 16px;
 					}
 					.phone,
 					.mail {
-						font-size: 1.5rem;padding: 8px 0;
+						font-size: 1.5rem;padding: 8px;
 					}
 				}
 			}
