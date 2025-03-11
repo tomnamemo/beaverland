@@ -28,7 +28,7 @@
 		gap:60px;padding-top: 100px;
 		section {
 			.section-title {
-				padding: 32px 0;font-size: 1.75rem;
+				padding: 32px 0 24px 8px;font-size: 1.75rem;
 			}
 			// 인트로섹션
 			&.intro {
@@ -51,7 +51,6 @@
 						}
 					}
 					.sub-title {
-						font-size: 1.5rem;
 						&.first {
 							bottom: 22%;
 						}
@@ -66,25 +65,25 @@
 			&.works {
 				.works-list {
 					.work {
-						padding: 40px 24px;
+						position: relative;padding: 40px 24px;
 						.info {
 							.customer {font-size: 1.125rem;}
 							.title {
-								margin-top: 8px;font-size: 2.8rem;word-break: keep-all;
+								padding-top: 8px;font-size: 2.8rem;word-break: keep-all;
 							}
 						}
 						.desc {
-							flex-direction:column; gap: 8px;margin-top: 16px;
+							flex-direction:column; gap: 8px;padding-top: 16px;
 							.keywords {
 								font-size: 1.5rem;
 								.kinds {
-									padding: 4px;
-									&:last-of-type {display: block; padding-left: 2px;margin-top: 4px;}
+									&:last-of-type {display: block; padding-left: 2px;padding: 4px 0 0 0;font-size: 1.125rem;}
 									&:last-of-type::before {display: none;}
 								}
 							}
 							.period {
-								font-size: 1.5rem;text-align: right;
+								position: absolute;right: 24px;bottom: 38px;
+								font-size: 1.125rem;text-align: right;
 							}
 						}
 					}
@@ -140,7 +139,7 @@
 			// skills section
 			&.skills {
 				.skill-list {
-						margin: 0 -40%; padding: 60px 0;
+						margin: 0 -30%; padding: 60px 0;
 					.skill {
 						max-width: 80px; margin-right:16px;width: 80px;
 						.img {width: 100%;vertical-align: middle;}
