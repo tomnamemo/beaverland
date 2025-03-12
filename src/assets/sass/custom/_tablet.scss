@@ -4,6 +4,7 @@
 	body,
 	html {
 	}
+	.only-tablet { display: block;}
 	.header {
 		height: 100px; padding: 32px;
 		.logo,
@@ -38,6 +39,28 @@
 						font-size: 3.5rem; opacity: 0;
 						&.from-top {top: 19%; }
 						&.from-bottom {bottom: 30%;}
+						@keyframes mainTitleTop {
+							65% {
+								opacity: 1; transform: translateY(140px) scale(1);
+							}
+							75% {
+								opacity: 1; transform: translateY(140px) scale(1);
+							}
+							100% {
+								opacity: 1; transform: translateY(0) scale(1);
+							}
+						}
+						@keyframes mainTitleBottom {
+							65% {
+								opacity: 1; transform: translateY(-140px) scale(1);
+							}
+							75% {
+								opacity: 1; transform: translateY(-140px) scale(1);
+							}
+							100% {
+								opacity: 1; transform: translateY(0) scale(1);
+							}
+						}
 					}
 					.img-box {
 						width: 260px;
@@ -65,11 +88,11 @@
 			&.works {
 				.works-list {
 					.work {
-						position: relative;padding: 40px 8px;
+						position: relative;padding: 32px 8px;
 						.info {
 							.customer {font-size: 1.125rem;}
 							.title {
-								padding-top: 8px;font-size: 2.8rem;word-break: keep-all;
+								padding-top: 8px;font-size: 2rem;word-break: keep-all;
 							}
 						}
 						.desc {
@@ -77,6 +100,9 @@
 							.keywords {
 								font-size: 1.5rem;
 								.kinds {
+									img {
+										height: 24px;
+									}
 									&:last-of-type {display: block; padding-left: 2px;padding: 4px 0 0 0;font-size: 1.125rem;}
 									&:last-of-type::before {display: none;}
 								}
@@ -139,10 +165,19 @@
 			// skills section
 			&.skills {
 				.skill-list {
-						margin: 0 -30%; padding: 60px 0;
+					gap: 50px;margin: 0 -46%; padding: 60px 0;animation: scroll 2s linear infinite alternate-reverse;
+
+					@keyframes scroll {
+						0% {
+							transform: translateX(26%);
+						}
+						100% {
+							transform: translateX(-26%);
+						}
+					}
 					.skill {
-						max-width: 80px; margin-right:16px;width: 80px;
-						.img {width: 100%;vertical-align: middle;}
+						max-width: 80px;width: 80px;
+						.img {width: 100%;}
 					}
 				}
 			}

@@ -1,6 +1,8 @@
 @charset "UTF-8";
 $urlNoto:"/font/notoSans/";
 $urlRoboto:"/font/Roboto/";
+$urlPretendard:"/font/Pretendard/";
+$urlMont:"/font/montserrat/";
 
 
 @font-face {
@@ -59,4 +61,137 @@ $urlRoboto:"/font/Roboto/";
   font-weight: 600;
   src: url($urlRoboto + 'Roboto-Medium.woff') format('woff');
   unicode-range:U+0041-005A, U+0061-007A, U+0030-0039, U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 900;
+	font-display: swap;
+	src: local("Pretendard Black"),
+       url($urlPretendard + "Pretendard-Black.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Black.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 800;
+	font-display: swap;
+	src: local("Pretendard ExtraBold"),
+       url($urlPretendard + "Pretendard-ExtraBold.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-ExtraBold.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 700;
+	font-display: swap;
+	src: local("Pretendard Bold"),
+       url($urlPretendard + "Pretendard-Bold.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Bold.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 600;
+	font-display: swap;
+	src: local("Pretendard SemiBold"),
+       url($urlPretendard + "Pretendard-SemiBold.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-SemiBold.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 500;
+	font-display: swap;
+	src: local("Pretendard Medium"),
+       url($urlPretendard + "Pretendard-Medium.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Medium.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 400;
+	font-display: swap;
+	src: local("Pretendard Regular"),
+       url($urlPretendard + "Pretendard-Regular.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Regular.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 300;
+	font-display: swap;
+	src: local("Pretendard Light"),
+       url($urlPretendard + "Pretendard-Light.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Light.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 200;
+	font-display: swap;
+	src: local("Pretendard ExtraLight"),
+       url($urlPretendard + "Pretendard-ExtraLight.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-ExtraLight.subset.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Pretendard";
+	font-weight: 100;
+	font-display: swap;
+	src: local("Pretendard Thin"),
+       url($urlPretendard + "Pretendard-Thin.subset.woff2") format("woff2"),
+       url($urlPretendard + "Pretendard-Thin.subset.woff") format("woff");
+}
+
+
+
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 400;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-Regular.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-Regular.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 500;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-Medium.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-Medium.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 600;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-SemiBold.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-SemiBold.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 700;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-Bold.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-Bold.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 800;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-ExtraBold.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-ExtraBold.woff') format('woff');
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';font-weight: 900;
+    font-style: normal;
+    src: url($urlMont + 'Montserrat-Black.woff2') format('woff2'),
+        url($urlMont + 'Montserrat-Black.woff') format('woff');
+	font-display: swap;
 }

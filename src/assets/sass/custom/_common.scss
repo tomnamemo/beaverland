@@ -2,6 +2,13 @@
 // #f471b6 #34d399 $custom-purple
 // $custom-yellow #60a5fa #818cf8  https://szmichalczyk.com/  border-bottom: 1px solid hsla(0, 0, 100, 0.1);
 
+$custom-yellow:#fbbf24;
+$custom-purple:#c084fc;
+$custom-pink:#f471b6;
+$custom-green:#34d399;
+$custom-blue:#60a5fa;
+
+
 body,
 html {
 	width: 100%; height: 100%; background-color: #111414; color: #efefef;
@@ -12,15 +19,25 @@ a {text-decoration: none; color: inherit;}
 
 button {background: inherit; border: none; box-shadow: none; border-radius: 0; overflow: visible; color: inherit; cursor: pointer;}
 
+.only-mobile { display: none;}
+.only-tablet { display: none;}
+
+.middot-list li{position: relative;padding-left: .8rem !important;}
+.middot-list li:before {
+	display: block;position: absolute;top: 60%; left: 2px;
+	width: 4px;height: 4px;border-radius: 50%;background-color: rgba(255, 255, 255, .4);
+	transform: translateY(-50%); content: "";
+}
+
 .header {
 	display: flex; justify-content: flex-end; align-items: center;
-	position: fixed; top: 0; width: 100%; height: 100px; padding: 20px 40px;
+	position: fixed; top: 0; width: 100%; height: 100px; padding: 20px 60px;
 	animation: fadeIn 0.5s 2.8s forwards;
 	transition: top 0.3s ease-in-out; transform: translateY(-100%); opacity: 1;
 	z-index: 999;
 	.logo,
 	.menu-button {
-		font-size: 1.125rem; font-weight: 700;
+		font-size: 1.125rem; font-weight: 800;
 	}
 	@keyframes fadeIn {
 		100% {
@@ -28,13 +45,13 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 		}
 	}
 	.logo {
-		position: absolute; top: 50%; left: 40px; transform: translateY(-50%); transition: all 0.3s ease-in-out;
+		position: absolute; top: 50%; left: 60px; transform: translateY(-50%); transition: all 0.3s ease-in-out;
 		&.hide {
 			top: -100%;
 		}
 	}
 	.menu-button {
-		padding: 0px 12px; border: 2px solid $custom-yellow; border-radius: 24px;
+		padding: 4px 12px; border: 2px solid $custom-yellow; border-radius: 24px;
 	}
 
 	.nav {
@@ -43,7 +60,7 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 		.menu_list {
 			display: flex; flex-direction: column; text-align: right;
 			.menu {
-				opacity: 0; position: relative; right: -100px; font-size: 1.125rem; padding: 6px 40px;
+				opacity: 0; position: relative; right: -100px; font-size: 1.125rem; padding: 12px 40px;
 				overflow: hidden;
 				&:hover {
 					transform: rotate(26deg);
@@ -52,7 +69,7 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 					}
 				}
 				a {
-					height: auto; padding: 0px 12px; border: 2px solid $custom-yellow; background-color: #111414; border-radius: 24px;
+					height: auto; padding: 4px 12px; font-weight: 600;border: 2px solid $custom-yellow; background-color: #111414; border-radius: 24px;
 				}
 			}
 		}
@@ -63,14 +80,15 @@ button {background: inherit; border: none; box-shadow: none; border-radius: 0; o
 footer {
 	display: flex;align-items: center;flex-direction: column;
 }
-section {width: calc(100vw - 300px);}
+// section {width: calc(100vw - 480px);}
+section {width: 1440px;}
 
 .main {
 	gap:160px;padding-top: 100px;overflow: hidden;
 	section {
 
 		.section-title {
-			position: relative;padding: 32px 16px;font-size: 2rem; color:$custom-yellow;
+			position: relative;padding: 32px 16px;font-size: 2rem; font-weight: 700; color:$custom-yellow;
 			sup {
 				font-size: 0.875rem;
 			}
@@ -90,7 +108,7 @@ section {width: calc(100vw - 300px);}
 			.content {
 				display: flex; flex-direction: column; justify-content: center; align-items: center;
 				.main-title {
-					position: absolute; font-size: 4.5rem;
+					position: absolute; font-size: 4.5rem;font-weight: 700;
 					opacity: 0;
 					&.from-top {top: 19%; transform: translateY(-200%) scale(3); animation: mainTitleTop 1.5s forwards;}
 					&.from-bottom {bottom: 30%; transform: translateY(200%) scale(3); animation: mainTitleBottom 1.5s forwards;}
@@ -135,7 +153,7 @@ section {width: calc(100vw - 300px);}
 					}
 				}
 				.sub-title {
-					position: absolute; font-size: 1.125rem; color: hsla(0, 0%, 100%, .6);text-align: center; opacity: 1;
+					position: absolute; font-size: 1.125rem; font-weight: 400;color: hsla(0, 0%, 100%, .6);text-align: center; opacity: 1;
 					&.first {
 						bottom: 22%; animation: fadeIn 1s 2s forwards; opacity: 0; transform: translateY(20px);
 					}
@@ -154,7 +172,7 @@ section {width: calc(100vw - 300px);}
 					.info {
 						.customer {font-size: 1.125rem;color:rgba(255,255,255,.6);}
 						.title {
-							font-size: 3.8rem;
+							font-size: 3.5rem;font-weight: 500;
 						}
 					}
 					.desc {
@@ -162,14 +180,16 @@ section {width: calc(100vw - 300px);}
 						.keywords {
 							font-size: 1.125rem;
 							.kinds {
-								color:rgba(255,255,255,.6);font-weight: 300;
-								img {vertical-align: middle;}
+								color:rgba(255,255,255,.6);font-weight: 400;
+								img {
+									height: 28px;padding-bottom: 4px;vertical-align: middle;
+								}
 								&:last-of-type {position: relative; padding-left: 20px; border: none;}
-								&:last-of-type::before {position: absolute; left: 6px; top: 50%; transform: translateY(-50%); content: "|";}
+								&:last-of-type::before {position: absolute; left: 6px; top: 50%;font-size: 1rem; transform: translateY(-50%); content: "|";}
 							}
 						}
 						.period {
-							font-size: 1.25rem; font-weight: 300; color: #efefefae;
+							font-size: 1.25rem; font-weight: 400; color: #efefefae;
 						}
 					}
 				}
@@ -182,25 +202,25 @@ section {width: calc(100vw - 300px);}
 				display: flex; align-items: flex-start;justify-content: space-between;gap:80px; padding: 60px 16px;
 				.group {
 					&.g1 {
-						.edu-title {font-size: 3.8rem; line-height: 1.5; margin-bottom: 30px;}
+						.edu-title {font-size: 3.8rem; font-weight: 700;line-height: 1.5; margin-bottom: 30px;}
 						flex-basis:auto;
 					}
 					&.g2 {
 						display: flex;flex-direction: column;gap: 24px;
-						flex-basis:50%;
-						h4 {font-size: 1.25rem;color:rgba(255,255,255,.8);}
+						flex-basis:60%;
+						h4 {font-size: 1.25rem;font-weight: 500;color:rgba(255,255,255,.8);}
 						.item {
 							display: flex;flex-direction: column; gap: 16px;padding: 32px 0;
 								.text-list {
 									display: flex;flex-direction: column;gap:8px;
-									text-align: left; font-size: 1.4rem; font-weight: 300;
+									text-align: left; font-size: 1.4rem; font-weight: 400;
 									.text {
 										display: flex; align-items: flex-start;
 										.period {
-											flex-basis: 230px;color:rgba(255,255,255,.6);
+											flex-basis: 260px;color:rgba(255,255,255,.6);
 										}
 										.label {
-											font-weight: 400;word-break: keep-all;
+											font-weight: 500;word-break: keep-all;
 										}
 										&:has(.academy):last-of-type {margin-top: 20px;}
 										.academy {
@@ -224,21 +244,21 @@ section {width: calc(100vw - 300px);}
 		// skills section
 		&.skills {
 			.skill-list {
-					display: flex; flex-wrap: nowrap; animation: scroll 1s linear infinite alternate-reverse;
-					padding: 80px 0;
-					overflow: hidden;
+				display: flex; flex-wrap: nowrap;gap: 60px; animation: scroll 2s linear infinite alternate-reverse;
+				padding: 80px 0 0 60px;margin: 0 -36%;
+				overflow: hidden;
+
 				@keyframes scroll {
 					0% {
-						transform: translateX(10%);
+						transform: translateX(14%);
 					}
 					100% {
-						transform: translateX(-10%);
+						transform: translateX(-14%);
 					}
 				}
 				.skill {
-					max-width: 200px; margin-right: 60px;
-					&:last-of-type{margin-right: 0;}
-					.img {width: 100%; vertical-align: top;}
+					max-width: 200px;
+					.img {width: 160px; vertical-align: top;}
 				}
 			}
 		}
@@ -262,11 +282,11 @@ section {width: calc(100vw - 300px);}
 				}
 				.title {
 					// text-indent: 2em;
-					font-size: 3.8em;max-width: 60%;word-break: keep-all;padding: 0 16px 24px;
+					font-size: 3.8em;font-weight: 700; max-width: 60%;word-break: keep-all;padding: 0 16px 24px;
 				}
 				.phone,
 				.mail {
-					font-size: 2rem;color: $custom-purple;padding: 16px;
+					font-size: 2rem;font-weight: 500;color: $custom-purple;padding: 16px;
 				}
 			}
 		}
@@ -302,6 +322,20 @@ section {width: calc(100vw - 300px);}
 
 
 /* desktop 규격 */
+@media screen and (min-width: 1921px) {
+	body,
+	html {
+	}
+	section {width: 1600px;}
+	.main section.intro .content .main-title.from-top {top: 24%;}
+	.main section.intro .content .main-title.from-bottom {bottom: 34%;}
+	.main section.intro .content .sub-title {font-size: 1.75rem;}
+	.main section.intro .content .sub-title.first {bottom: 22%;}
+	.main section.intro .content .sub-title.second {bottom: 18%;}
+	.main section.intro .content .img-box .intro-img {min-width: 260px;min-height: 260px;}
+	.main section.skills .skill-list .skill .img {width: 180px;}
+}
+
 @media screen and (min-width: 1024px) {
 	body,
 	html {
@@ -324,3 +358,4 @@ section {width: calc(100vw - 300px);}
 
 	}
 }
+

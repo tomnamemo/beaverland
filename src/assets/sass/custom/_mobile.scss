@@ -4,6 +4,8 @@
 	body,
 	html {
 	}
+
+	.only-mobile { display: block;}
 	.header {
 		height: 80px; padding: 24px;
 		.logo,
@@ -36,13 +38,35 @@
 				.content {
 					.main-title {
 						font-size: 2.5rem; opacity: 0;
-						&.from-top {top: 19%; }
+						&.from-top {top: 18%; }
 						&.from-bottom {bottom: 30%;}
+						@keyframes mainTitleTop {
+							65% {
+								opacity: 1; transform: translateY(120px) scale(1);
+							}
+							75% {
+								opacity: 1; transform: translateY(120px) scale(1);
+							}
+							100% {
+								opacity: 1; transform: translateY(0) scale(1);
+							}
+						}
+						@keyframes mainTitleBottom {
+							65% {
+								opacity: 1; transform: translateY(-120px) scale(1);
+							}
+							75% {
+								opacity: 1; transform: translateY(-120px) scale(1);
+							}
+							100% {
+								opacity: 1; transform: translateY(0) scale(1);
+							}
+						}
 					}
 					.img-box {
 						width: 260px;
 						.intro-img {
-							max-width: 260px; max-height: 260px; min-width: 220px; min-height: 220px;
+							max-width: 260px; max-height: 260px; min-width: 200px; min-height: 200px;
 						}
 						@keyframes introImgBox {
 							100% {
@@ -56,7 +80,7 @@
 							bottom: 22%;
 						}
 						&.second {
-							bottom: 19%;
+							bottom: 18%;
 						}
 					}
 				}
@@ -78,6 +102,9 @@
 							.keywords {
 								font-size: 1rem;
 								.kinds {
+									img {
+										height: 20px;
+									}
 									&:last-of-type {display: block; padding-left: 2px;padding: 12px 0 0 0;font-size: 1rem;}
 									&:last-of-type::before {display: none;}
 								}
@@ -109,7 +136,7 @@
 										&.licenses { gap: 0px;}
 										.text {
 											.period {
-												flex-basis: 80px;padding-bottom: 4px;
+												flex-basis: 80px;padding-bottom: 8px;
 											}
 											.label {
 												word-break: keep-all;
@@ -140,10 +167,18 @@
 			// skills section
 			&.skills {
 				.skill-list {
-						margin: 0 -60%; padding: 60px 0;
+					gap: 20px;margin: 0 -70%; padding: 60px 0 0 20px;animation: scroll 3s linear infinite alternate-reverse;
+					@keyframes scroll {
+						0% {
+							transform: translateX(26%);
+						}
+						100% {
+							transform: translateX(-26%);
+						}
+					}
 					.skill {
-						max-width: 80px; margin-right:16px;width: 80px;
-						.img {width: 100%;vertical-align: middle;}
+						max-width: 60px;width: 60px;
+						.img {width: 60px;}
 					}
 				}
 			}
