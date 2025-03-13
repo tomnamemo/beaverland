@@ -162,6 +162,22 @@
 				}
 			}
 
+			// archibe 보관소 공유
+			&.archiving {
+				.archive-list {
+					gap: 40px;padding: 40px 0;
+					li {
+						flex-basis:50%;
+						.link {
+							gap: 12px; padding: 32px;
+							h4{font-size: 1.25rem;}
+							.title{padding-top: 4px;}
+							.url{}
+						}
+					}
+				}
+			}
+
 			// skills section
 			&.skills {
 				.skill-list {

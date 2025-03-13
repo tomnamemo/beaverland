@@ -196,6 +196,7 @@ section {width: 1440px;}
 			}
 		}
 
+
 		// education 학력
 		&.education {
 			.flex-wrap {
@@ -236,6 +237,28 @@ section {width: 1440px;}
 								}
 						    +.item {border-top: 1px solid hsla(0, 0%, 78%, .2);;}
 						}
+					}
+				}
+			}
+		}
+
+		// archibe 보관소 공유
+		&.archiving {
+			.archive-list {
+				display: flex; gap: 60px;padding: 80px 0;
+				li {
+					flex-basis:25%;
+					.link {
+						display: flex;flex-direction:column;gap: 16px; padding: 40px;
+						border: 1px solid rgba(200, 200, 200, 0.2);border-radius: 24px;
+						transition: all 0.3s ease-in;
+						&:hover {
+							border-color:$custom-yellow;
+							.title {color: $custom-yellow;}
+						}
+						h4{font-size: 1.5rem;font-weight: 700;}
+						.title{padding-top: 8px;}
+						.url{color:rgba(255,255,255,.6);}
 					}
 				}
 			}

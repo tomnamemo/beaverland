@@ -5,6 +5,14 @@
 	html {
 	}
 
+	.middot-list li {
+		transform: none;
+		&:before {
+			top: 10px;
+		}
+		&:first-of-type::before{top: 18px;}
+	}
+
 	.only-mobile { display: block;}
 	.header {
 		height: 80px; padding: 24px;
@@ -159,6 +167,23 @@
 									}
 								+.item {border-top: 1px solid hsla(0, 0%, 78%, .2);;}
 							}
+						}
+					}
+				}
+			}
+
+			// archibe 보관소 공유
+			&.archiving {
+				.archive-list {
+					flex-direction: column;
+					gap: 32px;padding: 32px 0;
+					li {
+						flex-basis:100%;
+						.link {
+							gap: 12px; padding: 24px;
+							h4{font-size: 1.25rem;}
+							.title{padding-top: 4px;}
+							.url{}
 						}
 					}
 				}
