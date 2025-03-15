@@ -1,7 +1,7 @@
 @charset "UTF-8";
 $urlNoto:"/font/notoSans/";
 $urlRoboto:"/font/Roboto/";
-$urlPretendard:"/font/Pretendard/";
+$urlPretendard:"/font/pretendard/";
 $urlMont:"/font/montserrat/";
 
 
@@ -68,7 +68,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 900;
 	font-display: swap;
-	src: local("Pretendard Black"),
+	src:
        url($urlPretendard + "Pretendard-Black.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Black.subset.woff") format("woff");
 }
@@ -77,7 +77,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 800;
 	font-display: swap;
-	src: local("Pretendard ExtraBold"),
+	src:
        url($urlPretendard + "Pretendard-ExtraBold.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-ExtraBold.subset.woff") format("woff");
 }
@@ -86,7 +86,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 700;
 	font-display: swap;
-	src: local("Pretendard Bold"),
+	src:
        url($urlPretendard + "Pretendard-Bold.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Bold.subset.woff") format("woff");
 }
@@ -95,7 +95,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 600;
 	font-display: swap;
-	src: local("Pretendard SemiBold"),
+	src:
        url($urlPretendard + "Pretendard-SemiBold.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-SemiBold.subset.woff") format("woff");
 }
@@ -104,7 +104,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 500;
 	font-display: swap;
-	src: local("Pretendard Medium"),
+	src:
        url($urlPretendard + "Pretendard-Medium.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Medium.subset.woff") format("woff");
 }
@@ -113,7 +113,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 400;
 	font-display: swap;
-	src: local("Pretendard Regular"),
+	src:
        url($urlPretendard + "Pretendard-Regular.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Regular.subset.woff") format("woff");
 }
@@ -122,7 +122,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 300;
 	font-display: swap;
-	src: local("Pretendard Light"),
+	src:
        url($urlPretendard + "Pretendard-Light.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Light.subset.woff") format("woff");
 }
@@ -131,7 +131,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 200;
 	font-display: swap;
-	src: local("Pretendard ExtraLight"),
+	src:
        url($urlPretendard + "Pretendard-ExtraLight.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-ExtraLight.subset.woff") format("woff");
 }
@@ -140,7 +140,7 @@ $urlMont:"/font/montserrat/";
 	font-family: "Pretendard";
 	font-weight: 100;
 	font-display: swap;
-	src: local("Pretendard Thin"),
+	src:
        url($urlPretendard + "Pretendard-Thin.subset.woff2") format("woff2"),
        url($urlPretendard + "Pretendard-Thin.subset.woff") format("woff");
 }
